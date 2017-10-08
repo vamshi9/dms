@@ -52,6 +52,9 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
+//
+keystone.set('cloudinary config', 'cloudinary://216257869282467:7_bw-tnqZP4U967smqvvay3EjSc@vk7');
+keystone.set('cloudinary secure', true);
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
@@ -61,9 +64,7 @@ keystone.set('nav', {
 	users: 'users',
 });
 
-//
-keystone.set('cloudinary config', 'cloudinary://216257869282467:7_bw-tnqZP4U967smqvvay3EjSc@vk7');
-keystone.set('cloudinary secure', true);
+
 
 // Start Keystone to connect to your database and initialise the web server
 

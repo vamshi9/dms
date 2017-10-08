@@ -62,7 +62,7 @@ keystone.set('nav', {
 });
 
 //
-keystone.set('cloudinary config', { cloud_name: 'vk7', api_key: '216257869282467', api_secret: '7_bw-tnqZP4U967smqvvay3EjSc' });
+keystone.set('cloudinary config', 'cloudinary://216257869282467:7_bw-tnqZP4U967smqvvay3EjSc@vk7');
 keystone.set('cloudinary secure', true);
 
 // Start Keystone to connect to your database and initialise the web server

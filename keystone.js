@@ -56,6 +56,7 @@ keystone.set('routes', require('./routes'));
 if (keystone.get('env') == 'production'){
     keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
     keystone.set('cookie secret', process.env.COOKIE_SECRET);
+		keystone.set('mongo', process.env.MONGO_URI);
     //keystone.set('mailgun api key', process.env.MANDRILL_API_KEY);
 }
 

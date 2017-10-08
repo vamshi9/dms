@@ -52,9 +52,12 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
-// //
-// keystone.set('cloudinary config', 'cloudinary://216257869282467:7_bw-tnqZP4U967smqvvay3EjSc@vk7');
-// keystone.set('cloudinary secure', true);
+//
+if (keystone.get('env') == 'production'){
+    keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
+    keystone.set('cookie secret', process.env.COOKIE_SECRET);
+    //keystone.set('mandrill api key', process.env.MANDRILL_API_KEY);
+}
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {

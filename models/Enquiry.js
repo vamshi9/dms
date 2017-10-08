@@ -60,12 +60,13 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 		}).send({
 			to: admins,
 			from: {
-				name: 'dms',
-				email: 'contact@dms.com',
+				name: 'dataMS',
+				email: 'contact@datams.com',
 			},
-			subject: 'New Enquiry for dms',
+			subject: 'New Enquiry for dataMS',
 			enquiry: enquiry,
 			brand: brand,
+			layout: false,
 		}, callback);
 	});
 };

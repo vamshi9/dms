@@ -4,20 +4,29 @@ require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
+var handlebars = require('express-handlebars');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
 keystone.init({
-	'name': 'dms',
-	'brand': 'dms',
+	'name': 'dataMS',
+	'brand': 'dataMS',
 
-	'less': 'public',
+	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'view engine': 'pug',
+	'view engine': '.hbs',
+
+	'custom engine': handlebars.create({
+		layoutsDir: 'templates/views/layouts',
+		partialsDir: 'templates/views/partials',
+		defaultLayout: 'default',
+		helpers: new require('./templates/views/helpers')(),
+		extname: '.hbs',
+	}).engine,
 
 	'emails': 'templates/emails',
 

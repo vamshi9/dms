@@ -52,7 +52,7 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
-//
+//configuration
 if (keystone.get('env') == 'production'){
     keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
     keystone.set('cookie secret', process.env.COOKIE_SECRET);

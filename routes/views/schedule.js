@@ -5,7 +5,7 @@ exports = module.exports = function(req,res){
       var locals = res.locals;
 
       //set locals
-      locals.section = 'schedule';
+      locals.section ='schedule';
 
       //render views
       view.render('schedule',{title : 'Schedule'});

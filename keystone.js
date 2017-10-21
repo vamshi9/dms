@@ -68,6 +68,7 @@ keystone.set('nav', {
 	users: 'users',
 });
 
+keystone.set('signin logo','../images/logo.png');
 //requireUser
 keystone.set('signin url','/');
 

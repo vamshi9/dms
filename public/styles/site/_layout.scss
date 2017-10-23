@@ -1,7 +1,4 @@
-#header {
-	margin-top: 30px;
-}
-
+html, body{position:relative;font-family:"Open Sans", sans-serif;overflow-x:hidden;padding:0;}
 #footer {
 	margin-top: 30px;
 	border-top: 1px solid #eeeeee;
@@ -13,4 +10,24 @@
     display: block;
     max-width: 100%;
     height: auto;
+}
+.view{
+		height: 100vh;
+	  background:url('https://mdbootstrap.com/img/Photos/Others/img (40).jpg') no-repeat center center;
+		background-size: cover;
+}
+.navbar{
+	  background-color: #3068B0 ;
+}
+.navbar-brand, ul li a#topNav,ul li a#signout{
+	  color:$color;
+}
+ul li a#topNav:hover{
+	  background: none;
+}
+ul li a#topNav::after{
+	  border: red;
+}
+div button{
+	color:white;
 }

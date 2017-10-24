@@ -1,23 +1,12 @@
 html, body{position:relative;font-family:"Open Sans", sans-serif;overflow-x:hidden;padding:0;}
-#footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
-}
-
-.gallery-image img{
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-.view{
-		height: 100vh;
-	  background:url('https://mdbootstrap.com/img/Photos/Others/img (40).jpg') no-repeat center center;
-		background-size: cover;
+header.container-fluid{
+	  height:100vh;
+		overflow:hidden;
 }
 .navbar{
 	  background-color: #3068B0 ;
+		margin-bottom: 0;
+		padding:.5em;
 }
 .navbar-brand, ul li a#topNav,ul li a#signout{
 	  color:$color;
@@ -25,9 +14,23 @@ html, body{position:relative;font-family:"Open Sans", sans-serif;overflow-x:hidd
 ul li a#topNav:hover{
 	  background: none;
 }
-ul li a#topNav::after{
-	  border: red;
-}
 div button{
 	color:white;
+}
+.bg{
+	  height: 100vh;
+	  background:url('../images/bg.jpg') no-repeat;
+		background-size:cover;
+}
+.gallery-image img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#footer {
+
+	border-top: 1px solid #eeeeee;
+	padding-top: 30px;
+	color: #777777;
 }

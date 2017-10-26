@@ -1,27 +1,36 @@
-html, body{position:relative;font-family:"Open Sans", sans-serif;overflow-x:hidden;padding:0;}
-header.container-fluid{
-	  height:100vh;
-		overflow:hidden;
+/**Navbar**/
+nav{
+  background :#456FB6;
+  a img{
+     width:35px;
+     height:35px;
+  }
 }
-.navbar{
-	  background-color: #3068B0 ;
-		margin-bottom: 0;
-		padding:.5em;
+nav div ul li a{
+   color:white;
 }
-.navbar-brand, ul li a#topNav,ul li a#signout{
-	  color:$color;
+.top-nav-collapse {
+    background-color: #4285F4;
 }
-ul li a#topNav:hover{
-	  background: none;
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
 }
-div button{
-	color:white;
+.shrink{
+    padding:5px;
+    .navbar-brand {font-size: 25px;}
+    a img{
+      width:25px;
+      height:25px;
+    }
+    opacity:.85;
+    background:#324C89;
+    -webkit-transition :0.5s ease-in-out;
 }
-.bg{
-	  height: 100vh;
-	  background:url('../images/bg.jpg') no-repeat;
-		background-size:cover;
-}
+
+/**!Navbar**/
+
 .gallery-image img{
     display: block;
     max-width: 100%;

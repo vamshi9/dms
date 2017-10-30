@@ -54,6 +54,8 @@ keystone.set('nav', {
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
+	calendar : 'calendar',
+	research : 'research'
 });
 
 keystone.set('signin logo','../images/logo.png');

@@ -54,7 +54,7 @@ keystone.set('nav', {
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
-	calendar : 'calendar',
+	calendar : 'Calendar',
 	research : 'research'
 });
 

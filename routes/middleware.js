@@ -7,11 +7,33 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 		{label : 'Schedule',key : 'schedule',href:'/schedule'},
-		{label : 'Calendar',key : 'calendar',href:'/calendar'},
+		{label : 'Calendar',key : 'calendar',href:'/calendars'},
 		{label : 'Research',key:'research',href:'/research'},
 	];
 	res.locals.user = req.user;
 	next();
+};
+
+
+exports.initErrorHandlers = function(req, res, next) {
+
+    res.err = function(err, title, message) {
+        res.status(500).render('errors/500', {
+            err: err,
+            errorTitle: title,
+            errorMsg: message
+        });
+    }
+
+    res.notfound = function(title, message) {
+        res.status(404).render('errors/404', {
+            errorTitle: title,
+            errorMsg: message
+        });
+    }
+
+    next();
+
 };
 
 exports.flashMessages = function (req, res, next) {

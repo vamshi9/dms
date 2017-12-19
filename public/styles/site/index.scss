@@ -6,3 +6,12 @@ header .img-fluid{
     background-size: cover;
     background-attachment: fixed;
 }
+main{
+  .row{
+    margin: 3vw;
+    .card{
+        margin : 3.5vw;
+    }
+  }
+
+}

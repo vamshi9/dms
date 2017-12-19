@@ -71,5 +71,5 @@ keystone.set('signin url','/');
 // 	+ '\nset up your mailgun integration');
 // }
 
-keystone.set('port',7001);
+//keystone.set('port',7001);
 keystone.start();

@@ -37,9 +37,13 @@ nav div ul li a{
     height: auto;
 }
 
-#footer {
-
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+footer{
+  div.flex-center{
+     a{
+       margin :.4vw;
+       i{
+         overflow: hidden;
+       }
+     }
+  }
 }

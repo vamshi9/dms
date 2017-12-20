@@ -8,6 +8,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="/styles/site.css" rel="stylesheet"/>
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -80,11 +81,46 @@
 			<!-- The content block should contain the body of your template's content-->
 			{{{body}}}
 		</div>
-		<div class="container">
-			<div id="footer">
-				<p>Powered by <a href="https://vamshibachaneboina.herokuapp.com" target="_blank">Vamshi Bachaneboina</a>.</p>
-			</div>
-		</div>
+		<footer class="page-footer stylish-color-dark center-on-small-only font-weight-normal">
+				<div class="container-fluid">
+	        <div class="row">
+
+	            <!--First column-->
+	            <div class="col-md-4">
+	                <h5 class="title">Footer Content</h5>
+	                <p>Data about department .</p>
+	            </div>
+	            <!--/.First column-->
+
+	            <!--Second column-->
+	            <div class="col-md-2">
+	                <h5 class="title">Organization</h5>
+	                <ul>
+	                    <li><a href="#!">About us </a></li>
+	                    <li><a href="#!">Services</a></li>
+	                    <li><a href="#!">FAQ</a></li>
+	                </ul>
+	            </div>
+	            <!--/.Second column-->
+	        </div>
+					<hr>
+					<div class="flex-center">
+						<a href="#" class=""><i class="fa fa-facebook-square fa-2x "></i></a>
+						<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+						<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+						<a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+					</div>
+	      </div>
+      <!--/.Footer Links-->
+
+		    <!--Copyright-->
+		    <div class="footer-copyright">
+		        <div class="container-fluid">
+		            © 2017 Copyright: <a href="#"> Vamshi Bachaneboina </a>
+		        </div>
+		    </div>
+    <!--/.Copyright-->
+		</footer>
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,

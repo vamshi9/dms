@@ -36,14 +36,30 @@ nav div ul li a{
     max-width: 100%;
     height: auto;
 }
+iframe{
+  display: none;
+  position : fixed ;
+  right :3vw;
+  z-index : 1000;
+  margin-top: 41vh;
+  border: none;
+}
+.mychatbot{
+  position : fixed ;
+  background: none;
+  width: 10vh;
+  height:10vh;
+  right : 10px;
+  z-index : 1000;
+  margin-top: 85vh;
+  cursor: pointer;
+  border: none;
+}
 
 footer{
   div.flex-center{
      a{
        margin :.4vw;
-       i{
-         overflow: hidden;
-       }
      }
   }
 }

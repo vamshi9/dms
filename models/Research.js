@@ -1,20 +1,31 @@
 var keystone = require('keystone');
-var Types = keystone.Field.Types;
+    Types = keystone.Field.Types;
 
 var Research = new keystone.List('research',{
-      map : {name : 'title'},
-      autokey: { path: 'slug', from: 'title', unique: true },
+    autokey     : {path : 'slug', from : 'title', unique : 'true'},
+    map         : {name : 'title'},
+    defaultSort : '-createdAt'
 });
 
 Research.add({
-      title : {type :String , required:true},
-      state: { type: Types.Select, options: 'Query, Information, Task', default: 'Query', index: true },
-    	author: { type: Types.Relationship, ref: 'User', index: true },
-    	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-    	image: { type: Types.CloudinaryImage },
-    	content: {
-    		brief: { type: Types.Html, wysiwyg: true, height: 150 },
-    		extended: { type: Types.Html, wysiwyg: true, height: 400 },
-    	},
+     title                : {type : String, required : true},
+     state                : {type : Types.Select, options : 'Ongoing , Completed',default : 'Ongoing'},
+     projectInvestigator  : {type : String,},
+     fundingAgency        : {type : String},
+     sanctionedAmount     : {type : Number},
+     from                 : {type : Types.Date},
+     to                   : {type : Types.Date},
 });
+
+/**Can we call it with one function?**/
+Research.schema.virtual('fromDate').get(function () {
+    return this._.to.format("D MMMM YYYY"); 
+});
+
+Research.schema.virtual('toDate').get(function () {
+    return this._.to.format("D MMMM YYYY"); 
+});
+/**????**/
+
+Research.defaultColumns = 'title, state|20% projectinvestigator, fundingAgency, sanctionedAmount';
 Research.register();

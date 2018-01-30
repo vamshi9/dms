@@ -1,6 +1,6 @@
 var keystone = require('keystone');
-var middleware = require('./middleware');
-var importRoutes = keystone.importer(__dirname);
+    middleware = require('./middleware');
+    importRoutes = keystone.importer(__dirname);
 
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
@@ -11,14 +11,10 @@ var routes = {
 
 exports = module.exports = function (app) {
 	// Views
-	app.get('/',middleware.requireUser,routes.views.index);
+	app.get('/',routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
-	app.get('/schedule',routes.views.schedule);
-	app.get('/calendars/:calendar',routes.views.calendar);
-	app.get('/calendars/',routes.views.calendars);
-	app.get('/research',routes.views.research);
+	app.get('/research', routes.views.research);
 	app.all('/contact', routes.views.contact);
-
 };

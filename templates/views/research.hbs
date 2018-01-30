@@ -1,1 +1,53 @@
-Research
+<div class="container-fluid research">
+    <div class="row">
+
+        <!--mainContainer-->
+
+        <!--Ongoing Projects-->
+        <h1>Ongoing Projects</h1>
+        {{!-- <p>{{data.research.[0]}}</p> --}}
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                   <div class="table-wrapper-2">
+                       <table class="table table-responsive-md">
+                            <thead class="mdb-color lighten-4">
+                                <tr> 
+                                    <th class="th-lg">S.NO</th>
+                                    <th class="th-lg">Project Title</th>
+                                    <th class="th-lg">Project Investigator(s)</th>
+                                    <th class="th-lg">Funding Agency</th>
+                                    <th class="th-lg">Sanctioned Amount(Lakhs)</th>
+                                    <th class="th-lg">Period</th>
+                                </tr>
+                            </thead>                           
+                            <tbody>
+                                {{#each data.research}}
+                                <tr>
+                                    <th scope="row">{{@index}}</th>
+                                    <td>{{title}}</td>
+                                    <td>{{projectInvestigator}}</td>
+                                    <td>{{fundingAgency}}</td>
+                                    <td>{{sanctionedAmount}}</td>
+                                    <td>
+                                        {{fromDate}} - {{toDate}}
+                                    </td>
+                                </tr>                                   
+                                {{/each}}
+                            </tbody>
+                        </table>
+                   </div>  
+                </div>
+            </div>
+        </div>
+        <!--End Ongoing Projects-->
+        <!--End mainContainer-->
+
+        <!--sideNav-->
+        <div class="col-lg-4 col-md-4 sideNav">
+             
+        </div>
+        <!--End sideNav-->
+    </div>
+
+</div>

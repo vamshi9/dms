@@ -48,13 +48,11 @@ if (keystone.get('env') == 'production'){
     //keystone.set('mailgun api key', process.env.MANDRILL_API_KEY);
 }
 
-
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
-	calendar : 'Calendar',
 	research : 'research'
 });
 

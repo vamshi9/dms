@@ -7,8 +7,7 @@ exports = module.exports =function(req,res){
     //Set Locals
     locals.section = 'research';
     locals.data = {
-        research: [],
-        x : true
+        research: []
     }
 
     //Load the research projects

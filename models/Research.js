@@ -19,7 +19,7 @@ Research.add({
 
 /**Can we call it with one function?**/
 Research.schema.virtual('fromDate').get(function () {
-    return this._.to.format("D MMMM YYYY"); 
+    return this._.from.format("D MMMM YYYY"); 
 });
 
 Research.schema.virtual('toDate').get(function () {

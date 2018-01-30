@@ -7,18 +7,25 @@ exports = module.exports =function(req,res){
     //Set Locals
     locals.section = 'research';
     locals.data = {
-        research: []
+        ongoing: [],
+        completed: []
     }
 
     //Load the research projects
     view.on('init',function(next){
-       var q  = Research.model.find().where('state','Ongoing').sort('from');
-       
-       q.exec(function(err,results){
-             locals.data.research = results;
-             //console.log(locals.data.research);
+       var onGoing  = Research.model.find().where('state','Ongoing').sort('from');
+       var completed  = Research.model.find().where('state','Completed').sort('from');
+       onGoing.exec(function(err,results){
+             locals.data.ongoing = results;  
+             console.log("ongoing projects : " + locals.data.ongoing);          
              next(err);
-       })
+       });
+       completed.exec(function(err,results){
+            locals.data.completed = results;          
+            console.log("completed projects : " + locals.data.completed);  
+            next(err);
+       });
+       
     });
     view.render('research');
 }

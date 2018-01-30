@@ -1,3 +1,5 @@
+import { requireUser } from './middleware';
+
 var keystone = require('keystone');
     middleware = require('./middleware');
     importRoutes = keystone.importer(__dirname);
@@ -11,7 +13,7 @@ var routes = {
 
 exports = module.exports = function (app) {
 	// Views
-	app.get('/',routes.views.index);
+	app.get('/',requireUser,routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);

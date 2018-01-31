@@ -13,7 +13,7 @@ Research.add({
      principalInvestigator       : {type : String},
      coInvestigator              : {type : String},
      fundingAgency               : {type : String},
-     sanctionedAmountInLakhs     : {type : Number},
+     sanctionedAmount            : {type : Number,note:'lakhs'},
      from                        : {type : Types.Date},
      to                          : {type : Types.Date},
 });

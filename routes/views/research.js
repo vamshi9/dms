@@ -20,17 +20,17 @@ exports = module.exports =function(req,res){
        
        submitted.exec(function(err,results){
             locals.data.submitted = results;
-            console.log("submittted projects : " + locals.data.submitted);
+            //console.log("submittted projects : " + locals.data.submitted);
             next(err);
        });
        onGoing.exec(function(err,results){
             locals.data.ongoing = results;  
-            console.log("ongoing projects : " + locals.data.ongoing);          
+            //console.log("ongoing projects : " + locals.data.ongoing);          
             next(err);
        });
        completed.exec(function(err,results){
             locals.data.completed = results;          
-            console.log("completed projects : " + locals.data.completed);  
+            //console.log("completed projects : " + locals.data.completed);  
             next(err);
        });
        

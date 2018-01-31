@@ -8,13 +8,13 @@ var Research = new keystone.List('research',{
 });
 
 Research.add({
-     title                       : {type : String, required : true},
-     state                       : {type : Types.Select, options : 'Submitted, Ongoing , Completed',default : 'Submitted'},
-     projectInvestigator         : {type : String,},
-     fundingAgency               : {type : String},
-     sanctionedAmountInLakhs     : {type : Number},
-     from                        : {type : Types.Date},
-     to                          : {type : Types.Date},
+     title                               : {type : String, required : true},
+     state                               : {type : Types.Select, options : 'Submitted, Ongoing , Completed',default : 'Submitted'},
+     projectInvestigator                 : {type : String},
+     fundingAgency                       : {type : String},
+     sanctionedAmountInLakhs             : {type : Number},
+     from                                : {type : Types.Date},
+     to                                  : {type : Types.Date},
 });
 
 /**Can we call it with one function?**/

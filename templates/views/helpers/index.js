@@ -27,7 +27,10 @@ module.exports = function () {
 			return options.inverse(this);
 		}
 	};
-
+	
+	_helpers.add = function(val){
+		return val+1;
+	}
 	/**
 	 * Port of Ghost helpers to support cross-theming
 	 * ==============================================

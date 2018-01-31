@@ -11,6 +11,7 @@ Research.add({
      title                       : {type : String, required : true},
      state                       : {type : Types.Select, options : 'Submitted, Ongoing , Completed',default : 'Submitted'},
      principalInvestigator       : {type : String},
+     coInvestigator              : {type : String},
      fundingAgency               : {type : String},
      sanctionedAmountInLakhs     : {type : Number},
      from                        : {type : Types.Date},
@@ -27,5 +28,5 @@ Research.schema.virtual('toDate').get(function () {
 });
 /**????**/
 
-Research.defaultColumns = 'title, state|20% projectinvestigator, fundingAgency, sanctionedAmount';
+Research.defaultColumns = 'title, state|20% principalInvestigator, fundingAgency, sanctionedAmount';
 Research.register();

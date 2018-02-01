@@ -53,7 +53,8 @@ keystone.set('nav', {
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
-	research : 'research'
+	research : 'research',
+	publications : 'publications'
 });
 
 keystone.set('signin logo','../images/logo.png');

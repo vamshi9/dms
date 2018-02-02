@@ -15,15 +15,12 @@ Publications.add({
      publishedDate               : {type : Types.Date},
 });
 
-/**Can we call it with one function?**/
-Publications.schema.virtual('fromDate').get(function () {
-    return this._.from.format("D MMMM YYYY"); 
+/**Changing the date format**/
+Publications.schema.virtual('date').get(function () {
+    return this._.publishedDate.format("D MMMM YYYY"); 
 });
 
-Publications.schema.virtual('toDate').get(function () {
-    return this._.to.format("D MMMM YYYY"); 
-});
-/**????**/
+/**Date format change**/
 
 Publications.defaultColumns = 'title, state|20% principalInvestigator, fundingAgency, sanctionedAmount';
 Publications.register();

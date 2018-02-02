@@ -14,8 +14,7 @@
                                 <tr> 
                                     <th class="th-lg">S.NO</th>
                                     <th class="th-lg">Paper Title</th>
-                                    <th class="th-lg">Principal Investigator(s)</th>
-                                    <th class="th-lg">Co-Investigator</th>
+                                    <th class="th-lg">Author(s)</th>
                                     <th class="th-lg">Journal</th>
                                     <th class="th-lg">Period</th>
                                 </tr>
@@ -25,11 +24,10 @@
                                 <tr>
                                     <th scope="row">{{add @index}}</th>
                                     <td>{{title}}</td>
-                                    <td>{{principalInvestigator}}</td>
-                                    <td>{{coInvestigator}}</td>
+                                    <td>{{author}}</td>
                                     <td>{{journal}}</td>
                                     <td>
-                                        {{fromDate}} - {{toDate }}
+                                        {{publishedDate}}
                                     </td>
                                 </tr>                                   
                                 {{/each}}
@@ -40,48 +38,9 @@
             </div>
         </div>
         <!--End Submitted papers-->
-        
-        <!--Ongoing Papers-->
-        <h1 class ="h1-responsive"><strong>Ongoing </strong><small class="text-muted">Research Papers</small></h1>
-        {{!-- <p>{{data.research.[0]}}</p> --}}
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body">
-                   <div class="table-wrapper-2">
-                       <table class="table table-responsive-md">
-                            <thead class="mdb-color lighten-4">
-                                <tr> 
-                                    <th class="th-lg">S.NO</th>
-                                    <th class="th-lg">Project Title</th>
-                                    <th class="th-lg">Principal Investigator(s)</th>
-                                    <th class="th-lg">Co-Investigator</th>
-                                    <th class="th-lg">Journal</th>
-                                    <th class="th-lg">Period</th>
-                                </tr>
-                            </thead>                           
-                            <tbody>
-                                {{#each data.ongoing}}
-                                <tr>
-                                    <th scope="row">{{add @index}}</th>
-                                    <td>{{title}}</td>
-                                    <td>{{principalInvestigator}}</td>
-                                    <td>{{coInvestigator}}</td>
-                                    <td>{{journal}}</td>
-                                    <td>
-                                        {{fromDate}} - {{toDate }}
-                                    </td>
-                                </tr>                                   
-                                {{/each}}
-                            </tbody>
-                        </table>
-                   </div>  
-                </div>
-            </div>
-        </div>
-        <!--End Ongoing Papers-->
 
-        <!--Future Research Papers-->
-            <h1 class="h1-responsive"><strong>Completed</strong><small class="text-muted"> Research Papers</small></h1>
+        <!--Accepted Research Papers-->
+            <h1 class="h1-responsive"><strong>Accepted</strong><small class="text-muted"> Research Papers</small></h1>
            {{!-- <p>{{data.research.[0]}}</p> --}}
             <div class="col-lg-12">
                 <div class="card">
@@ -92,8 +51,7 @@
                                     <tr> 
                                         <th class="th-lg">S.NO</th>
                                         <th class="th-lg">Project Title</th>
-                                        <th class="th-lg">Principal Investigator(s)</th>
-                                        <th class="th-lg">Co-Investigator</th>
+                                        <th class="th-lg">Author(s)</th>
                                         <th class="th-lg">Journal</th>
                                         <th class="th-lg">Period</th>
                                     </tr>
@@ -103,11 +61,10 @@
                                     <tr>
                                         <th scope="row">{{add @index}}</th>
                                         <td>{{title}}</td>
-                                        <td>{{principalInvestigator}}</td>
-                                        <td>{{coInvestigator}}</td>
+                                        <td>{{author}}</td>
                                         <td>{{journal}}</td>
                                         <td>
-                                            {{fromDate}} - {{toDate }}
+                                            {{publishedDate}}
                                         </td>
                                     </tr>                                   
                                     {{/each}}
@@ -117,7 +74,7 @@
                     </div>
                 </div>
             </div>
-        <!--End Future Research Projects-->
+        <!--End Accepted Research Projects-->
 
         <!--End mainContainer-->
         

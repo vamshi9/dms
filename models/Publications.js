@@ -9,12 +9,10 @@ var Publications = new keystone.List('Publications',{
 
 Publications.add({
      title                       : {type : String, required : true},
-     state                       : {type : Types.Select, options : 'Submitted, Ongoing , Completed',default : 'Submitted'},
-     principalInvestigator       : {type : String},
-     coInvestigator              : {type : String},
+     state                       : {type : Types.Select, options : 'Submitted, Accepted',default : 'Submitted'},
+     author                      : {type : String},
      journal                     : {type : String},
-     from                        : {type : Types.Date},
-     to                          : {type : Types.Date},
+     publishedDate               : {type : Types.Date},
 });
 
 /**Can we call it with one function?**/

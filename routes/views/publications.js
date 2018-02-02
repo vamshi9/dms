@@ -8,28 +8,21 @@ exports = module.exports =function(req,res){
     locals.section = 'publications';
     locals.data = {
         submitted: [],
-        ongoing: [],
-        completed: []
+        accepted: []
     }
 
     //Load the Publications projects
     view.on('init',function(next){
-       var submitted = Publications.model.find().where('state',"Submitted").sort('from');
-       var onGoing  = Publications.model.find().where('state','Ongoing').sort('from');
-       var completed  = Publications.model.find().where('state','Completed').sort('from');
+       var submitted = Publications.model.find().where('state',"Submitted").sort('publishedDate');
+       var accepted  = Publications.model.find().where('state','Accepted').sort('publishedDate');
        
        submitted.exec(function(err,results){
             locals.data.submitted = results;
             //console.log("submittted projects : " + locals.data.submitted);
             next(err);
        });
-       onGoing.exec(function(err,results){
-            locals.data.ongoing = results;  
-            //console.log("ongoing projects : " + locals.data.ongoing);          
-            next(err);
-       });
-       completed.exec(function(err,results){
-            locals.data.completed = results;          
+       accepted.exec(function(err,results){
+            locals.data.accepted = results;          
             //console.log("completed projects : " + locals.data.completed);  
             next(err);
        });

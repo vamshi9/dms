@@ -17,5 +17,6 @@ exports = module.exports = function (app) {
 	app.get('/gallery', routes.views.gallery);
 	app.get('/research', routes.views.research);
 	app.get('/publications',routes.views.publications);
+	app.get('/teaching-initiatives',routes.views.teaching);
 	app.all('/contact', routes.views.contact);
 };

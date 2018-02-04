@@ -7,7 +7,8 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
 		{ label : 'Research', key : 'research' , href : '/research'},
-		{ label : 'Publications', key : 'publications', href : '/publications'}
+		{ label : 'Publications', key : 'publications', href : '/publications'},
+		{ label : 'Teaching Initiatives', key : 'teaching', href : '/teaching-initiatives'}
 	];
 	res.locals.user = req.user;
 	next();

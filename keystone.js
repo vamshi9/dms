@@ -32,6 +32,7 @@ keystone.init({
 
 keystone.import('models');
 
+keystone.set('admin path','admin');
 keystone.set('locals', {
 	_: require('lodash'),
 	env: keystone.get('env'),

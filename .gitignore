@@ -27,6 +27,7 @@ node_modules/*
 !node_modules/keystone
 # Ignore .env configuration files
 .env
-
+#Ignore visual studio files
+.vscode
 # Ignore .DS_Store files on OS X
 .DS_Store

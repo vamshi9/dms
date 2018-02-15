@@ -22,9 +22,9 @@ build/Release
 # Dependency directory
 # Deployed apps should consider commenting this line out:
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
-node_modules/*
+#node_modules/*
 # not ignoring specing folder
-!*/node_modules/keystone/*
+#!*/node_modules/keystone/*
 # Ignore .env configuration files
 .env
 

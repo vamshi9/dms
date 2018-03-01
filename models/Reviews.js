@@ -15,5 +15,5 @@ Reviews.add({
     //Year : {type : Types.Date}
 });
 
-Reviews.defaultColumns = 'title , course , professorName';
+Reviews.defaultColumns = 'student';
 Reviews.register();

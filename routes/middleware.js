@@ -21,12 +21,13 @@ exports.initLocals = function (req, res, next) {
 	}else{
 		if(userInfo.name.first != "HOD"){
 			keystone.set('nav',{
-				posts: ['posts', 'post-categories'],
+					posts: ['posts', 'post-categories'],
 					galleries: 'galleries',
 					research : 'research',
 					publications : 'publications',
 					teaching : 'teaching',
-					reviews : 'reviews'
+					reviews : 'reviews',
+					departmentContribution : 'contribution'
 			});
 		}else{
 			keystone.set('nav',{
@@ -37,7 +38,9 @@ exports.initLocals = function (req, res, next) {
 					research : 'research',
 					publications : 'publications',
 					teaching : 'teaching',
-					reviews : 'reviews'
+					reviews : 'reviews',
+					departmentContribution : 'contribution'
+
 			});
 		}
 	}

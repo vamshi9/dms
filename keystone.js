@@ -13,7 +13,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-
+    'mongo' : process.env.MONGO_URI,
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
@@ -42,25 +42,12 @@ keystone.set('locals', {
 
 keystone.set('routes', require('./routes'));
 
-if (keystone.get('env') == 'production'){
-    keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
-    keystone.set('cookie secret', process.env.COOKIE_SECRET);
-		keystone.set('mongo', process.env.MONGOLAB_BLACK_URI);
-    //keystone.set('mailgun api key', process.env.MANDRILL_API_KEY);
-}
-
-keystone.set('nav', {
-	posts: ['posts', 'post-categories'],
-	galleries: 'galleries',
-	enquiries: 'enquiries',
-	users: 'users',
-	research : 'research',
-	publications : 'publications',
-	teaching : 'teaching'
-});
+keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
+keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
 keystone.set('signin logo','../images/logo.png');
 keystone.set('signin url','/');
+keystone.set('signin redirect','/');
 
 // if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 // 	console.log('----------------------------------------'
@@ -72,5 +59,5 @@ keystone.set('signin url','/');
 // 	+ '\nset up your mailgun integration');
 // }
 
-//keystone.set('port',7001);
+keystone.set('port',7000);
 keystone.start();

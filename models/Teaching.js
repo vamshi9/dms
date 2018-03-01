@@ -1,7 +1,7 @@
 var keystone = require('keystone');
     Types = keystone.Field.Types;
 
-var Teaching = new keystone.List('Teaching',{
+var Teaching = new keystone.List('teaching',{
     autokey : {path : 'slug', from : 'title' , unique : 'true'},
     map : {name : 'title'},
     defaultSort : '-createdAt'

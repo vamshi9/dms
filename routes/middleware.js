@@ -1,4 +1,5 @@
 let _ = require('lodash');
+var keystone = require('keystone');
 
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
@@ -11,6 +12,35 @@ exports.initLocals = function (req, res, next) {
 		{ label : 'Teaching Initiatives', key : 'teaching', href : '/teaching-initiatives'}
 	];
 	res.locals.user = req.user;
+	
+	var userInfo = req.user;
+	//console.log(userInfo);
+
+    if(typeof userInfo === 'undefined'){
+		res.redirect('/admin/signin');
+	}else{
+		if(userInfo.name.first != "HOD"){
+			keystone.set('nav',{
+				posts: ['posts', 'post-categories'],
+					galleries: 'galleries',
+					research : 'research',
+					publications : 'publications',
+					teaching : 'teaching',
+					reviews : 'reviews'
+			});
+		}else{
+			keystone.set('nav',{
+					posts: ['posts', 'post-categories'],
+					galleries: 'galleries',
+					enquiries: 'enquiries',
+					users: 'users',
+					research : 'research',
+					publications : 'publications',
+					teaching : 'teaching',
+					reviews : 'reviews'
+			});
+		}
+	}
 	next();
 };
 

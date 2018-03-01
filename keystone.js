@@ -55,7 +55,8 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 	research : 'research',
-	publications : 'publications'
+	publications : 'publications',
+	teaching : 'teaching'
 });
 
 keystone.set('signin logo','../images/logo.png');

@@ -1,9 +1,36 @@
+body {
+  overflow-x: hidden; }
+
+/*Side fixed Navbar*/
+body:not(.side-nav) {
+  padding-left: 240px; }
+  body:not(.side-nav) .side-nav li a {
+    color: white; }
+  body:not(.side-nav) #slide-out {
+    background-image: url("../../images/sidenav4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+    body:not(.side-nav) #slide-out .collapsible-body {
+      background: none; }
+    body:not(.side-nav) #slide-out .user-view img {
+      width: 87.5px;
+      height: 85px; }
+  body:not(.side-nav) nav {
+    left: 0px; }
+
+@media only screen and (max-width: 992px) {
+  body {
+    padding-left: 0; } }
+
 /**Navbar**/
+.logo {
+  vertical-align: middle;
+  width: 42px;
+  height: 42px; }
+
 nav {
-  background: #243A51; }
-  nav a img {
-    width: 35px;
-    height: 35px; }
+  background: #2D4157; }
 
 nav div ul li a {
   color: white; }

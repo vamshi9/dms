@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-Teaching= keystone.list('teaching');
+    Teaching = keystone.list('teaching');
 exports = module.exports = function(req,res){
     var view = new keystone.View(req,res);
     
@@ -13,8 +13,8 @@ exports = module.exports = function(req,res){
         var teaching = Teaching.model.find();
         teaching.exec(function(err,results){
             locals.data.teachingData = results;
-            console.log(results);
-        });
+            next(err);
+        });        
     });
 
     view.render('teaching');     

@@ -6,9 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>dataMS</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet"/>
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 		<link href="/styles/site.css" rel="stylesheet"/>
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
@@ -24,38 +23,60 @@
 
 	</head>
 	<body>
-		<header>
-		 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling">
-         <div class="container-fluid">
-			      <a href="/" class="navbar-brand"><img src="../images/logo.png"/><strong>DMS</strong></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-					      <span class="navbar-toggler-icon"></span>
-			      </button>
-						<div class="collapse navbar-collapse">
-							<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="nav-item active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}" class="nav-link ">{{ label }}</a>
-									</li>
+		<ul id="slide-out" class="side-nav fixed hide-on-med-and-down">
+			<li><div class="user-view">
+			<a href="#!user"><img class="circle responsive-img" src='{{user.profilePhoto.url}}'></a>
+			<a href="#!name"><span class="white-text name">Prof. {{user.name.first}} {{user.name.last}}</span></a>
+			<a href="#!email"><span class="white-text email">{{user.email}}</span></a>
+			<a href="" class=""></a>
+			</div></li>
+			<li><div class="divider"></div></li>
+			<li><a href="/admin"><i class="material-icons white-text">dashboard</i>Dashboard</a></li>
+			{{#each navLinks}}
+				<li {{#ifeq ../section key}} class="nav-item active no-padding"{{else}}{{/ifeq}}>
+				    <ul class="collapsible collapsible-accordion">
+					<li>
+						{{#if dropDown}}
+						<a class="nav-link collapsible-header"><i class="material-icons white-text">{{icon}}</i>{{ label }}<i class="material-icons right white-text">arrow_drop_down</i></a>
+						<div class="collapsible-body">
+							<ul>
+								{{#each dropDown}}
+									<li><a >{{this}}</a></li>
 								{{/each}}
 							</ul>
-							<ul class="navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout" id="signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
 						</div>
+						{{else}}
+							<a href= "{{href}}" class="nav-link"><i class="material-icons white-text">{{icon}}</i>{{ label }}</a>
+						{{/if}}
+					</li>
+					</ul>
+				</li>
+			{{/each}}
+			<li><a href="/contact"><i class="material-icons white-text">mail_outline</i>Contact</a></li>
+			<li><a class="waves-effect" href="/admin/signout"><i class="material-icons white-text">settings_power</i>Sign-out</a></li>
+		</ul>
+		
+		<header>		
+			<div class="navbar-fixed">
+				<nav>
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down">
+							<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
+							<li><a href=""><i class="material-icons right white-text">schedule</i></a></li>
+							<li><a href=""><i class="material-icons right white-text">chat_bubble_outline</i></a></li>
+							<li><a href="#" ><img src="images/logo.png" alt="" class=" logo"> DMS</a></li>
+						</ul>
 					</div>
-		  </nav>
+				</nav>
+			</div>
+						
 		</header>
 		<div id="body">
-			<div class="top" onclick="removeIFrame();"></div>
+			{{!-- <div class="top" onclick="removeIFrame();"></div>
 	    <iframe width="350" height="430" id="mychatbot" src="https://console.dialogflow.com/api-client/demo/embedded/f067576f-8f9d-42e3-b0bc-97dc191cc64b">
 			</iframe>
 			<div class="top"></div>
-      <img class="mychatbot" src="../images/chatbot.png"/>
+      <img class="mychatbot" src="../images/chatbot.png"/> --}}
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
 				validation errors, success messages, etc
@@ -87,7 +108,7 @@
 			<!-- The content block should contain the body of your template's content-->
 			{{{body}}}
 		</div>
- <footer class="page-footer stylish-color-dark center-on-small-only font-weight-normal">
+ {{!-- <footer class="page-footer stylish-color-dark center-on-small-only font-weight-normal">
 				<div class="container-fluid">
 	        <div class="row">
 
@@ -126,16 +147,14 @@
 		        </div>
 		    </div>
     <!--/.Copyright-->
-		</footer>
+		</footer> --}}
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 			//- you can upgrade to 2.1.4 (also bundled) for better performance.
 		--}}
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 		<script src="/js/navShrink.js"></script>
 		<script src="/js/main.js"></script>
 		{{{isAdminEditorJS user}}}

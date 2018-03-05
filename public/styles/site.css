@@ -2,8 +2,11 @@ body {
   overflow-x: hidden; }
 
 /*Side fixed Navbar*/
+.button-collapse {
+  z-index: 1000; }
+
 body:not(.side-nav) {
-  padding-left: 240px; }
+  padding-left: 300px; }
   body:not(.side-nav) .side-nav li a {
     color: white; }
   body:not(.side-nav) #slide-out {
@@ -30,7 +33,7 @@ body:not(.side-nav) {
   height: 42px; }
 
 nav {
-  background: #2D4157; }
+  background: #3F4349; }
 
 nav div ul li a {
   color: white; }
@@ -43,15 +46,13 @@ nav div ul li a {
     background-color: #243A51; } }
 
 .shrink {
-  padding: 5px;
+  height: 50px;
   opacity: .85;
-  background: #243A51;
-  -webkit-transition: 0.3s ease-in-out; }
-  .shrink .navbar-brand {
-    font-size: 25px; }
-  .shrink a img {
-    width: 25px;
-    height: 25px; }
+  background: #41464C;
+  -webkit-transition: 0.4s ease-in-out; }
+  .shrink div ul li {
+    -webkit-transition: 0.4s ease-in-out;
+    margin-top: -6px; }
 
 /**!Navbar**/
 .gallery-image img {

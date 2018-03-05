@@ -1,8 +1,10 @@
 $(document).ready(function(){ 
   /**SideNav**/
-    $(".button-collapse").sideNav({ 
-      closeOnClick : true,
-    });
+    $(".button-collapse").sideNav();
+   // $("ul#slide-out").addClass('fixed hide-on-med-and-down');
+    if($(window).width() <= 992){
+      $("ul#slide-out").removeClass('fixed hide-on-med-and-down');
+    }
   /**End SideNav**/
   
   /**Chatbot**/

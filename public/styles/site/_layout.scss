@@ -33,7 +33,7 @@ body:not(.side-nav){
 
 @media only screen and (max-width: 992px) {
   body{
-    padding-left: 0; 
+    margin-left: -300px; 
   }  
 }
 
@@ -60,9 +60,11 @@ nav div ul li a{
 .shrink{
     height: 50px;
     opacity:.85;
-    background:#41464C  ;
+    background:#41464C ;
+    transition: ease-in-out;
     -webkit-transition :0.4s ease-in-out;
     div ul li{
+      transition: ease-in-out;
       -webkit-transition: 0.4s ease-in-out;
        margin-top: -6px;
     }

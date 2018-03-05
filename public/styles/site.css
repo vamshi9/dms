@@ -24,7 +24,7 @@ body:not(.side-nav) {
 
 @media only screen and (max-width: 992px) {
   body {
-    padding-left: 0; } }
+    margin-left: -300px; } }
 
 /**Navbar**/
 .logo {
@@ -49,8 +49,10 @@ nav div ul li a {
   height: 50px;
   opacity: .85;
   background: #41464C;
+  transition: ease-in-out;
   -webkit-transition: 0.4s ease-in-out; }
   .shrink div ul li {
+    transition: ease-in-out;
     -webkit-transition: 0.4s ease-in-out;
     margin-top: -6px; }
 
@@ -106,7 +108,7 @@ main ul {
   padding: 0; }
 
 .research {
-  padding-top: 6vh; }
+  padding: 6vh; }
 
 .table-wrapper-2 {
   display: block;

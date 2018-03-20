@@ -49,6 +49,7 @@ keystone.set('signin logo','../images/logo.png');
 keystone.set('signin url','/');
 keystone.set('signin redirect','/');
 
+
 // if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 // 	console.log('----------------------------------------'
 // 	+ '\nWARNING: MISSING MAILGUN CREDENTIALS'

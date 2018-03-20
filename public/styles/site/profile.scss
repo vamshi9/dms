@@ -1,0 +1,26 @@
+.profile{
+    padding: 20vh 30vh 0 30vh ;
+    .profileInfo{
+        border: 0.75px solid rgb(206, 205, 205);
+    }
+    button{
+        margin-left : 45%;
+        margin-bottom: 50px;
+    }
+
+
+    form{   
+        .row:nth-child(1){
+            padding:0 50px 50px 50px;
+        }
+        .file-field{
+            padding: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .profile{
+      padding:0;
+    }  
+}

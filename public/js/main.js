@@ -1,13 +1,16 @@
 $(document).ready(function(){ 
-  /**SideNav**/
+  /*SideNav*/
     $(".button-collapse").sideNav();
    // $("ul#slide-out").addClass('fixed hide-on-med-and-down');
     if($(window).width() <= 992){
       $("ul#slide-out").removeClass('fixed hide-on-med-and-down');
     }
-  /**End SideNav**/
   
-  /**Chatbot**/
+   /*profile*/
+   $('input#input_text, textarea#textarea1').characterCounter();
+
+
+  /*Chatbot*/
     $(".mychatbot").click(function(){
       if($(this).css("transform") == "none"){
           $(this).css("transform","rotate(225deg)");
@@ -20,5 +23,5 @@ $(document).ready(function(){
     $("#close").click(function(){
       $("#mychatbot").hide();
     });
-  /**!Chatbot end**/
+
 });

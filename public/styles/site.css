@@ -132,6 +132,26 @@ h1 {
   padding: 2.5vw 0 0 40vw; }
 
 .teaching {
-  padding-top: 7.5vh; }
-  .teaching h1 {
-    margin-left: 22.5vw; }
+  padding: 6vw; }
+  .teaching img {
+    width: 65px;
+    height: 60px; }
+
+.profile {
+  padding: 20vh 30vh 0 30vh; }
+  .profile .profileInfo {
+    border: 0.75px solid #cecdcd; }
+  .profile button {
+    margin-left: 45%;
+    margin-bottom: 50px; }
+  .profile form .row:nth-child(1) {
+    padding: 0 50px 50px 50px; }
+  .profile form .file-field {
+    padding: 50px; }
+
+@media only screen and (max-width: 992px) {
+  .profile {
+    padding: 0; } }
+
+.contact {
+  padding: 7.5vh; }

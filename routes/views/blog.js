@@ -24,6 +24,7 @@ exports = module.exports = function (req, res) {
 			}
 
 			locals.data.categories = results;
+			//console.log(locals.data.categories);
 
 
 			async.each(locals.data.categories, function (category, next) {
@@ -55,11 +56,11 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Post').paginate({
 			page: req.query.page || 1,
-			perPage: 10,
-			maxPages: 10,
-			filters: {
-				state: 'published',
-			},
+			perPage: 9,
+			//maxPages: 10,
+			// filters: {
+			// 	state: 'published',
+			// },
 		})
 			.sort('-publishedDate')
 			.populate('author categories');
@@ -70,6 +71,7 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
+			//console.log(results);
 			next(err);
 		});
 	});

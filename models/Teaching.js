@@ -4,7 +4,8 @@ var keystone = require('keystone');
 var Teaching = new keystone.List('teaching',{
     autokey : {path : 'slug', from : 'title' , unique : 'true'},
     map : {name : 'title'},
-    defaultSort : '-createdAt'
+    defaultSort : '-createdAt',
+    track:true
 });    
 
 Teaching.add({

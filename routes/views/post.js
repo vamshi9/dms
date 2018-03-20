@@ -18,7 +18,6 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 
 		var q = keystone.list('Post').model.findOne({
-			state: 'published',
 			slug: locals.filters.post,
 		}).populate('author categories');
 
@@ -32,7 +31,7 @@ exports = module.exports = function (req, res) {
 	// Load other posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').limit('4');
+		var q = keystone.list('Post').model.find().sort('-publishedDate').populate('author').limit('4');
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;

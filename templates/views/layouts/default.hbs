@@ -25,7 +25,7 @@
 	<body>
 			<ul id="slide-out" class="side-nav fixed hide-on-med-and-down">
 				<li><div class="user-view">
-				<a href="#!user"><img class="circle responsive-img" src='{{user.profilePhoto.url}}'></a>
+				<a href="#!user"><img class="circle responsive-img" src="../images/{{user.name.first}} {{user.name.last}}.jpg"></a>
 				<a href="#!name"><span class="white-text name">Prof. {{user.name.first}} {{user.name.last}}</span></a>
 				<a href="#!email"><span class="white-text email">{{user.email}}</span></a>
 				<a href="" class=""></a>
@@ -53,6 +53,7 @@
 					</li>
 				{{/each}}
 				<li><a href="/contact"><i class="material-icons white-text">mail_outline</i>Contact</a></li>
+				<li><a href="/profile"><i class="material-icons white-text">person</i> Profile</a></li>
 				<li><a class="waves-effect" href="/admin/signout"><i class="material-icons white-text">power_settings_new</i>Sign-out</a></li>
 			</ul>
 				

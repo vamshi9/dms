@@ -1,0 +1,29 @@
+<div class="container-fluid profile">
+    <div class="row">
+        
+        <form action="/upload" method="post" class="col s12 m12 l12 z-depth-2" enctype="multipart/form-data">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="first_name" name="first_name" type="text" class="validate" data-length="15">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="last_name" name="last_name" type="text" class="validate" data-length="15">
+                    <label for="last_name" data-error="wrong" data-success="right">Last Name</label>
+                </div>
+            </div>     
+            <button type="submit" class="btn">Update<i class="material-icons right">send</i></button>
+            <div class="file-field input-field">
+                <div class="btn grey">
+                    <span>Profile Pic</span>
+                    <input name="profilePic" type="file" >
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate"  type="text">
+                </div>
+                <button type="submit" class="btn waves-effect waves-light btn">Upload <i class="material-icons right">file_upload</i></button>
+            </div>
+            
+        </form>
+    </div>
+</div>

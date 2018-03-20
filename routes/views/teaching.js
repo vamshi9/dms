@@ -10,8 +10,9 @@ exports = module.exports = function(req,res){
     }
 
     view.on('init',function(next){
-        var teaching = Teaching.model.find();
+        var teaching = Teaching.model.find().populate('author');
         teaching.exec(function(err,results){
+            //console.log(results)
             locals.data.teachingData = results;
             next(err);
         });        

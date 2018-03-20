@@ -109,27 +109,23 @@ main ul {
 
 .research {
   padding: 6vh; }
-
-.table-wrapper-2 {
-  display: block;
-  max-height: 35vh;
-  overflow-y: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
-
-h1 {
-  padding: 2.5vw 0 0 40vw; }
+  .research .table-wrapper-2 {
+    display: block;
+    max-height: 35vh;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .research h1 {
+    padding: 2.5vw 0 0 40vw; }
 
 .publications {
   padding-top: 6vh; }
-
-.table-wrapper-2 {
-  display: block;
-  max-height: 35vh;
-  overflow-y: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
-
-h1 {
-  padding: 2.5vw 0 0 40vw; }
+  .publications .table-wrapper-2 {
+    display: block;
+    max-height: 35vh;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .publications h1 {
+    padding: 2.5vw 0 0 40vw; }
 
 .teaching {
   padding: 6vw; }
@@ -155,3 +151,9 @@ h1 {
 
 .contact {
   padding: 7.5vh; }
+
+.blog .blogText {
+  padding-left: 7.5vw;
+  margin-top: -1.5vw; }
+  .blog .blogText h4 a {
+    color: black; }

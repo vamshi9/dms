@@ -1,33 +1,39 @@
-<div class="container">
+<div class="container blog">
+	<h4 class="condensed">Showing Recent {{data.posts.results.length}} posts.</h4>
+	{{!--
 	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="condensed">Showing {{data.posts.results.length}} posts.</h4>
-			<div class="blog">
-				{{#each data.posts.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<div class="col-lg-4">{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}</div>
-					<div class="col-lg-6">
-						<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-						<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
-								{{#if author.name.first}}by {{author.name.first}}{{/if}}
-						</p>
-						
-						<p>{{{content.brief}}}</p>
-						{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
-					</div>
-				</div>
-				{{/each}}
-			</div>
+		<div class="col l4">a</div>
+		<div class="col l4">a</div>
+		<div class="col l4">a</div>
+	</div> --}}
+	<div class="col-sm-4 col-md-3 col-lg-4">
+		<div style="margin-top: 70px;" class="list-group">
+			<a href="/blog" class="active list-group-item">All Categories</a>
+			{{# each data.categories }}
+			<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
+			{{/each}}
 		</div>
-		<div class="col-sm-4 col-md-3">
-			<h2>Categories</h2>
-			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
-				{{/each}}
+	</div>
+	{{#each data.posts.results}}
+	<div class="row">
+		<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+			<div class="col l4 col m4">{{#if image}}
+				<img src="{{{cloudinaryUrl image width=360 height=360 crop='fit' }}}" class="img pull-right responsive-img z-depth-5">{{/if}}</div>
+			<div class="col l6 col m8 blogText">
+				<h4>
+					<a href="{{postUrl slug}}" class="bold">{{{title}}}</a>
+				</h4>
+				<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
+				</p>
+
+				<p>{{{content.brief}}}</p>
+				{{#if content.extended}}
+				<p class="read-more">
+					<a href="{{postUrl slug}}">Read more...</a>
+				</p>{{/if}}
 			</div>
 		</div>
 	</div>
-	{{>pagination}}
+	{{/each}} {{>pagination}}
+
 </div>

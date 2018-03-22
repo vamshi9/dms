@@ -8,8 +8,9 @@ $(document).ready(function(){
   
    /*profile*/
    $('input#input_text, textarea#textarea1').characterCounter();
-
-
+  
+   /*materialbox*/
+   $('.materialboxed').materialbox();
   /*Chatbot*/
     $(".mychatbot").click(function(){
       if($(this).css("transform") == "none"){

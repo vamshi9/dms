@@ -152,8 +152,17 @@ main ul {
 .contact {
   padding: 7.5vh; }
 
-.blog .blogText {
-  padding-left: 7.5vw;
-  margin-top: -1.5vw; }
-  .blog .blogText h4 a {
-    color: black; }
+.blog {
+  padding: 6vw 0 6vw 6vw; }
+  .blog .post {
+    margin-bottom: 5vw; }
+    .blog .post hr {
+      margin-top: 1em;
+      margin-bottom: 0.5em; }
+  .blog .blogText {
+    padding-left: 4vw;
+    margin-top: -1.5vw; }
+    .blog .blogText h4 a {
+      color: black; }
+  .blog .listGroup {
+    top: 0px; }

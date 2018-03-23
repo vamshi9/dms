@@ -1,5 +1,15 @@
 .blog{
-    padding :6vw 0 6vw 6vw ;
+    padding :1.5vw 0 6vw 6vw ;
+    h1{
+        font-family: 'medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif';
+        font-weight: 600;
+        font-size: 42px;
+        font-style: normal;
+        line-height: 44px;
+        color: rgba(0, 0, 0, 0.84);
+        padding-bottom:50px; 
+        
+    }
     .post{
         margin-bottom: 5vw;
         hr{

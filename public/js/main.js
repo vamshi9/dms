@@ -1,6 +1,6 @@
 $(document).ready(function(){ 
   /*SideNav*/
-    $(".button-collapse").sideNav();
+    $(".buttonCollapse").sideNav();
    // $("ul#slide-out").addClass('fixed hide-on-med-and-down');
     if($(window).width() <= 992){
       $("ul#slide-out").removeClass('fixed hide-on-med-and-down');
@@ -11,6 +11,14 @@ $(document).ready(function(){
   
    /*materialbox*/
    $('.materialboxed').materialbox();
+   
+   /*full screen slider*/
+   $('.slider').slider({
+       indicators : false
+   });
+
+   /*post flow text*/
+  // $('.postFlow p').addClass('flow-text');
   /*Chatbot*/
     $(".mychatbot").click(function(){
       if($(this).css("transform") == "none"){

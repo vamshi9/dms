@@ -1,5 +1,5 @@
 <div class="container-fluid blog">
-	<h4 class="condensed">Showing Recent {{data.posts.results.length}} posts.</h4>
+	<h1 class="center-align">Showing Recent {{data.posts.results.length}} posts</h4>
 	
 	{{!-- <div class="row">
 		{{#each data.posts.results}}
@@ -45,7 +45,7 @@
 								</h6>
 								<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
 								</p>
-								<p class="truncate">{{{content.brief}}}</p>
+								<p>{{{content.brief}}}</p>
 								{{#if content.extended}}
 								<p class="read-more">
 									<a href="{{postUrl slug}}">Read more...</a>

@@ -2,13 +2,12 @@ body{
   overflow-x: hidden;
 }
 /*Side fixed Navbar*/
-.button-collapse{
-  z-index:1000;
+
+.side-nav li a{
+  color: white;
 }
 body:not(.side-nav){
-  .side-nav li a{
-    color: white;
-  }
+  
   #slide-out{
     background-image: url('../../images/sidenav4.jpg');
     background-size: cover;
@@ -24,8 +23,6 @@ body:not(.side-nav){
       }
     }
   }
-
-  padding-left: 300px;
   nav{
     left:0px;
   }
@@ -44,7 +41,8 @@ body:not(.side-nav){
   height:42px;
 }
 nav{
-  background :#3F4349;
+  background :#243A51;
+ 
 }
 nav div ul li a{
    color:white;
@@ -60,7 +58,7 @@ nav div ul li a{
 .shrink{
     height: 50px;
     opacity:.85;
-    background:#41464C ;
+    background:rgba(0, 0, 0, 0.84) ;
     transition: ease-in-out;
     -webkit-transition :0.4s ease-in-out;
     div ul li{

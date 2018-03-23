@@ -1,29 +1,82 @@
-{{!-- <header>
+<div class="slider ">
+	<ul class="slides ">
+		<li>
+			<img src="/images/intro.jpg">
+			<!-- random image -->
+			<div class="caption center-align">
+				<h3>This is our big Tagline!</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+		<li>
+			<img src="/images/cover-min.jpg">
+			<!-- random image -->
+			<div class="caption left-align">
+				<h3>Left Aligned Caption</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+		<li>
+			<img src="/images/1.jpg">
+			<!-- random image -->
+			<div class="caption right-align">
+				<h3>Right Aligned Caption</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+		<li>
+			<img src="https://lorempixel.com/580/250/nature/4">
+			<!-- random image -->
+			<div class="caption center-align">
+				<h3>This is our big Tagline!</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div class="container-fluid row secondSection center-align">
+		<h2 class="col l3 m3 s12 ">
+				<i class="material-icons  large">layers</i> INNOVATE 
+		</h2>
+		<h2 class="col l3 m3 s12  ">
+				<i class="material-icons large">layers</i>
+				<span>ACHIEVE</span>
+		</h2>
+		<h2 class="col l3 m3 s12  ">
+				<i class="material-icons large">layers</i>
+				<span>LEAD</span>
+		</h2>
+
+</div>
+
+{{!--
+<header>
 	<div class="view hm-purple-light">
-	  <img src="../images/bg.jpg" class="img-fluid" alt="civil blocks">
+		<img src="../images/bg.jpg" class="img-fluid" alt="civil blocks">
 		<div class="mask flex-center">
-			   <h2 class="white-text">Build the change</h2>
+			<h2 class="white-text">Build the change</h2>
 		</div>
 	</div>
 </header>
 <main>
-	 <div class="container introVideo">
-				   <div class="embed-responsive embed-responsive-16by9">
-		              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/FelpaIdtmm8" allowfullcreen></iframe>
-					 </div>
-	 </div>
-	 <div class="container-fluid professorList grey lighten-3">
-	  <div class="row">
-		  <div class="col-md-6 col-lg-4 ">
+	<div class="container introVideo">
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="//www.youtube.com/embed/FelpaIdtmm8" allowfullcreen></iframe>
+		</div>
+	</div>
+	<div class="container-fluid professorList grey lighten-3">
+		<div class="row">
+			<div class="col-md-6 col-lg-4 ">
 				<div class="card">
 					<img class="img-fluid" src="../images/prof.sridhar.jpg" alt="Card image cap">
 					<div class="card-body">
-							<!--Title-->
-							<h4 class="card-title">Dr. Sridhar Raju</h4>
-							<h6 class="card-subtitle mb-2 text-muted">Associate Professor</h6>
-							<!--Text-->
-							<p class="card-text">Some text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Button</a>
+						<!--Title-->
+						<h4 class="card-title">Dr. Sridhar Raju</h4>
+						<h6 class="card-subtitle mb-2 text-muted">Associate Professor</h6>
+						<!--Text-->
+						<p class="card-text">Some text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Button</a>
 					</div>
 				</div>
 			</div>
@@ -31,11 +84,11 @@
 				<div class="card">
 					<img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
 					<div class="card-body">
-							<!--Title-->
-							<h4 class="card-title">Card title</h4>
-							<!--Text-->
-							<p class="card-text">Some text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Button</a>
+						<!--Title-->
+						<h4 class="card-title">Card title</h4>
+						<!--Text-->
+						<p class="card-text">Some text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Button</a>
 					</div>
 				</div>
 			</div>
@@ -43,47 +96,72 @@
 				<div class="card">
 					<img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
 					<div class="card-body">
-							<!--Title-->
-							<h4 class="card-title">Card title</h4>
-							<!--Text-->
-							<p class="card-text">Some text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Button</a>
+						<!--Title-->
+						<h4 class="card-title">Card title</h4>
+						<!--Text-->
+						<p class="card-text">Some text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Button</a>
 					</div>
 				</div>
 			</div>
-	 </div>
- </div>
- <div class="container-fluid events">
-    <h2 class="flex-center white">Take Note</h2><hr>
-	  <div class="row">
-			  <div class="col-md-4 col-lg-4">
-            <h3 class="title">News</h3>
-						<ul>
-							<li><a href="#">Consultancy</a></li>
-							<li><a href="#">Funding</a></li>
-							<li><a href="#">Research projects</a></li>
-						</ul>
-			  </div>
-				<div class="col-md-4 col-lg-4">
-            <h3>Events</h3>
-						<ul>
-							<li><a href="#">Transportation field test</a></li>
-							<li><a href="#">Bridge plan</a></li>
-							<li><a href="#">Structural analysis</a></li>
-							<li><a href="#">Field visit</a></li>
-					  </ul>
-			  </div>
-				<div class="col-md-4 col-lg-4">
-           <h3>Calendar</h3>
-					 <ul>
-						 <li><a href="#">OMC lab test</a></li>
-						 <li><a href="#">Field Visit</a></li>
-						 <li><a href="#">Weekly analysis</a></li>
-						 <li><a href="#">Enhancement plans</a></li>
-						 <li><a href="#">Student interaction</a></li>
-				   </ul>
-			  </div>
+		</div>
+	</div>
+	<div class="container-fluid events">
+		<h2 class="flex-center white">Take Note</h2>
+		<hr>
+		<div class="row">
+			<div class="col-md-4 col-lg-4">
+				<h3 class="title">News</h3>
+				<ul>
+					<li>
+						<a href="#">Consultancy</a>
+					</li>
+					<li>
+						<a href="#">Funding</a>
+					</li>
+					<li>
+						<a href="#">Research projects</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<h3>Events</h3>
+				<ul>
+					<li>
+						<a href="#">Transportation field test</a>
+					</li>
+					<li>
+						<a href="#">Bridge plan</a>
+					</li>
+					<li>
+						<a href="#">Structural analysis</a>
+					</li>
+					<li>
+						<a href="#">Field visit</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<h3>Calendar</h3>
+				<ul>
+					<li>
+						<a href="#">OMC lab test</a>
+					</li>
+					<li>
+						<a href="#">Field Visit</a>
+					</li>
+					<li>
+						<a href="#">Weekly analysis</a>
+					</li>
+					<li>
+						<a href="#">Enhancement plans</a>
+					</li>
+					<li>
+						<a href="#">Student interaction</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 
- </div>
+	</div>
 </main> --}}

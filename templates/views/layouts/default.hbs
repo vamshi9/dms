@@ -23,9 +23,10 @@
 
 	</head>
 	<body>
-			<ul id="slide-out" class="side-nav fixed hide-on-med-and-down">
+			
+			<ul id="slide-out" class="side-nav">
 				<li><div class="user-view">
-				<a><img class="circle responsive-img" src="/images/{{user.name.first}} {{user.name.last}}.jpg"></a>
+				<a><img class="circle responsive-img" src={{user.profilePhoto.url}}></a>
 				<a href="#!name"><span class="white-text name">Prof. {{user.name.first}} {{user.name.last}}</span></a>
 				<a href="#!email"><span class="white-text email">{{user.email}}</span></a>
 				<a href="" class=""></a>
@@ -56,17 +57,16 @@
 				<li><a href="/profile"><i class="material-icons white-text">person</i> Profile</a></li>
 				<li><a class="waves-effect" href="/admin/signout"><i class="material-icons white-text">power_settings_new</i>Sign-out</a></li>
 			</ul>
-				
-		<header>		
+						
 			<div class="navbar-fixed">
 				<nav>
-					<div class="nav-wrapper">
-						<a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+					<div class="nav-wrapper">		
+						<a href="" data-activates="slide-out" class="buttonCollapse"><i class="material-icons left">menu</i></a>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
 							<li><a href=""><i class="material-icons right white-text">schedule</i></a></li>
 							<li><a href=""><i class="material-icons right white-text">chat_bubble_outline</i></a></li>
-							<li><a href="#" ><img src="images/logo.png" alt="" class=" logo"> DMS</a></li>
+							<li><a href="" ><img src="/images/logo.png" alt="" class=" logo"> DMS</a></li>
 						</ul>
 						<ul class="right hide-on-large-only">
 							<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
@@ -75,8 +75,6 @@
 					</div>
 				</nav>
 			</div>
-						
-		</header>
 		<div id="body">
 			{{!-- <div class="top" onclick="removeIFrame();"></div>
 	    <iframe width="350" height="430" id="mychatbot" src="https://console.dialogflow.com/api-client/demo/embedded/f067576f-8f9d-42e3-b0bc-97dc191cc64b">

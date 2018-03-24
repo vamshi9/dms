@@ -30,7 +30,7 @@ body:not(.side-nav) nav {
   height: 42px; }
 
 nav {
-  background: #243A51; }
+  background: #101f2e; }
 
 nav div ul li a {
   color: white; }
@@ -82,10 +82,10 @@ footer div.flex-center a {
   margin: .4vw; }
 
 .secondSection {
-  padding: 5vw 10vw 5vw 27.5vw;
+  padding: 2vw 10vw 2.25vw 15vw;
   box-sizing: border-box; }
   .secondSection h2 {
-    font: '"Open Sans", sans-serif';
+    font: normal "Open Sans", sans-serif;
     font-size: 20px;
     line-height: 22px;
     color: #1e1e1e;
@@ -93,8 +93,7 @@ footer div.flex-center a {
     letter-spacing: 3px; }
     .secondSection h2 i {
       display: block;
-      margin-top: 20px;
-      font-size: 137px; }
+      padding: 60px; }
 
 .research {
   padding: 6vh; }

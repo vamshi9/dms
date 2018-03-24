@@ -1,19 +1,21 @@
+
 .secondSection{
-  padding:5vw 10vw 5vw 27.5vw;
+  padding:2vw 10vw 2.25vw 15vw;
   box-sizing:border-box;
-  h2 {
-    i{
-      display:block;  
-      margin-top  : 20px;  
-      font-size: 137px;
-    } 
-    font: '"Open Sans", sans-serif';
+  h2{
+    font:normal "Open Sans", sans-serif;
     font-size:20px;
     line-height:22px;
     color:#1e1e1e;
     font-weight:300;
     letter-spacing:3px;
+    i{
+      display:block;  
+      padding : 60px;
+    } 
+    
   }
+
 }
 
 

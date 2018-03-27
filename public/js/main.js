@@ -14,8 +14,12 @@ $(document).ready(function(){
    
    /*full screen slider*/
    $('.slider').slider({
-       indicators : false
+       indicators : false,
+       height : 500
    });
+
+   /*Parallax*/
+   $('.parallax').parallax();
 
    /*post flow text*/
   // $('.postFlow p').addClass('flow-text');

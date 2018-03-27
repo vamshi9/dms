@@ -81,19 +81,25 @@ iframe {
 footer div.flex-center a {
   margin: .4vw; }
 
-.secondSection {
-  padding: 2vw 10vw 2.25vw 15vw;
+.home .secondSection {
+  padding: 0vw 10vw 2vw 15vw;
   box-sizing: border-box; }
-  .secondSection h2 {
+  .home .secondSection h2 {
     font: normal "Open Sans", sans-serif;
     font-size: 20px;
     line-height: 22px;
     color: #1e1e1e;
     font-weight: 300;
     letter-spacing: 3px; }
-    .secondSection h2 i {
+    .home .secondSection h2 i {
       display: block;
       padding: 60px; }
+
+.home .section4 {
+  margin-top: 50px; }
+  .home .section4 .card {
+    max-width: 300px;
+    margin-bottom: 40px; }
 
 .research {
   padding: 6vh; }

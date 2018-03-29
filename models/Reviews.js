@@ -9,6 +9,7 @@ var Reviews = new keystone.List('reviews',{
 
 Reviews.add({
     student : {type : String , required : true},
+    //professorName : {type : String},
     progress : {type :Types.Select, options : 'Excellent, V Good, Good, Satisfactory, NC'},
     comments : {type: Types.Html, wysiwyg: true, height: 150 },
     semester : {type : Types.Select,options: '1,2'},

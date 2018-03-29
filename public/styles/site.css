@@ -19,10 +19,6 @@ body:not(.side-nav) #slide-out {
 body:not(.side-nav) nav {
   left: 0px; }
 
-@media only screen and (max-width: 992px) {
-  body {
-    margin-left: -300px; } }
-
 /**Navbar**/
 .logo {
   vertical-align: middle;
@@ -95,11 +91,23 @@ footer div.flex-center a {
       display: block;
       padding: 60px; }
 
-.home .section4 {
-  margin-top: 50px; }
-  .home .section4 .card {
-    max-width: 300px;
-    margin-bottom: 40px; }
+.home .section4 .col.s12.m6.l4 {
+  padding: 7vw 7vw 0 7vw; }
+  .home .section4 .col.s12.m6.l4 .card {
+    margin-right: 75px;
+    width: 300px;
+    height: 375px; }
+    .home .section4 .col.s12.m6.l4 .card .cardBackground {
+      height: 110px;
+      background-image: url("/images/user-bg.jpg"); }
+      .home .section4 .col.s12.m6.l4 .card .cardBackground img {
+        width: 90px;
+        height: 90px;
+        margin: 67.5px 0 0 105px; }
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+  .home .section4 .col.s12.m6.l4 {
+    padding: 5vw 5vw 0 5vw; } }
 
 .research {
   padding: 6vh; }

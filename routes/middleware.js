@@ -12,7 +12,7 @@ exports.initLocals = function (req, res, next) {
 	res.locals.user = req.user;
 	
 	var userInfo = req.user;
-	console.log(userInfo);
+	//console.log(userInfo);
 
     if(typeof userInfo === 'undefined'){
 		res.redirect('/admin/signin');
@@ -33,6 +33,7 @@ exports.initLocals = function (req, res, next) {
 					galleries: 'galleries',
 					enquiries: 'enquiries',
 					users: 'users',
+					professors : 'professors',
 					research : 'research',
 					publications : 'publications',
 					teaching : 'teaching',

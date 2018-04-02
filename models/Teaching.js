@@ -12,7 +12,8 @@ Teaching.add({
     //Year : {type : Types.select}
     title : {type : String, required :true},
     course : {type : String},
-    professorName : {type : String}
+    professorName : {type : String},
+    description : {type: Types.Html, wysiwyg: true, height: 150 }
 });
 
 /*virtuals for semester here*/

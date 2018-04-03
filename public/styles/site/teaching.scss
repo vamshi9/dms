@@ -1,7 +1,15 @@
 .teaching{
     padding: 6vw;
-    img{
-        width:65px;
-        height: 60px;
+    .col.s4.m4.l3{
+        display : inline-block;
+        img{
+            display : inline-block;
+            width:65px;
+            height: 65px;
+        }
+        p{
+            display : inline-block;
+        }
+        
     }
 }

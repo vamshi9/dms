@@ -21,6 +21,10 @@ $(document).ready(function(){
    /*Parallax*/
    $('.parallax').parallax();
 
+   /*teaching-initiative*/
+   if($(window).width() > 992 && $(window).width() <1326){
+      $('.cardPanel').removeClass('col s12 m10 offset-m1 l5 offset-l7').addClass('col s12 m10 l10 offset-m1 offset-l1')
+   }
    /*post flow text*/
   // $('.postFlow p').addClass('flow-text');
   /*Chatbot*/

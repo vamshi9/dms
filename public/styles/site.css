@@ -74,8 +74,10 @@ iframe {
   cursor: pointer;
   border: none; }
 
-footer div.flex-center a {
-  margin: .4vw; }
+.page-footer {
+  background-color: #23334B; }
+  .page-footer div.flex-center a {
+    margin: .4vw; }
 
 .home .secondSection {
   padding: 0vw 10vw 2vw 15vw;
@@ -131,9 +133,14 @@ footer div.flex-center a {
 
 .teaching {
   padding: 6vw; }
-  .teaching img {
-    width: 65px;
-    height: 60px; }
+  .teaching .col.s4.m4.l3 {
+    display: inline-block; }
+    .teaching .col.s4.m4.l3 img {
+      display: inline-block;
+      width: 65px;
+      height: 65px; }
+    .teaching .col.s4.m4.l3 p {
+      display: inline-block; }
 
 .profile {
   padding: 20vh 30vh 0 30vh; }
@@ -155,9 +162,11 @@ footer div.flex-center a {
   padding: 7.5vh; }
 
 .blog {
-  padding: 1.5vw 0 6vw 6vw; }
+  width: 100%;
+  margin-top: 4rem;
+  font-family: "Roboto", sans-serif; }
   .blog h1 {
-    font-family: 'medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif';
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 42px;
     font-style: normal;
@@ -165,17 +174,108 @@ footer div.flex-center a {
     color: rgba(0, 0, 0, 0.84);
     padding-bottom: 50px; }
   .blog .post {
-    margin-bottom: 5vw; }
-    .blog .post hr {
-      margin-top: 1em;
-      margin-bottom: 0.5em; }
-  .blog .blogText {
-    padding-left: 4vw;
-    margin-top: -1.5vw; }
-    .blog .blogText h4 a {
-      color: black; }
+    position: relative;
+    min-height: 14rem;
+    padding-left: 20rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee; }
+    @media screen and (min-width: 992px) {
+      .blog .post .post-cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18rem;
+        height: 12rem;
+        overflow: hidden;
+        border-radius: .125rem;
+        display: block; }
+        .blog .post .post-cover img {
+          width: auto;
+          min-height: 100%;
+          min-width: 100%;
+          max-width: 150%;
+          max-height: none;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          display: block;
+          transform: translate(-50%, -50%); } }
+    .blog .post header .post-title {
+      font-size: 1.5rem; }
+      .blog .post header .post-title a {
+        color: black; }
+    .blog .post .post-meta {
+      margin: .5rem 0;
+      font-size: .875rem;
+      color: #aaa;
+      text-transform: uppercase; }
+    .blog .post .post-body {
+      font-size: 1rem; }
+      .blog .post .post-body p {
+        margin-bottom: 1rem; }
+      .blog .post .post-body a {
+        color: #6610f2;
+        border: 1px solid #6610f2;
+        box-shadow: none;
+        background: none;
+        font-size: .75rem;
+        border-radius: .125rem;
+        font-weight: 500;
+        cursor: pointer; }
+  .blog aside.blog-sidebar {
+    padding-left: 5rem !important; }
+    .blog aside.blog-sidebar .widget {
+      margin-bottom: 4rem;
+      position: relative;
+      display: block; }
+      .blog aside.blog-sidebar .widget ul li {
+        margin-bottom: .5rem;
+        display: list-item; }
+        .blog aside.blog-sidebar .widget ul li blockquote {
+          border-left-color: #7128a5; }
+          .blog aside.blog-sidebar .widget ul li blockquote a {
+            color: black;
+            font-family: "Roboto";
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 20px; }
+        .blog aside.blog-sidebar .widget ul li div {
+          display: inline-block; }
+          .blog aside.blog-sidebar .widget ul li div a {
+            top: -15px;
+            color: black;
+            font-family: "Roboto";
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px; }
+          .blog aside.blog-sidebar .widget ul li div i {
+            vertical-align: bottom;
+            position: relative;
+            top: 5px;
+            left: 5px;
+            margin-top: 10px;
+            transform: rotate(45deg);
+            padding-right: 15px;
+            color: #FF9E08;
+            font-size: 1.5rem; }
   .blog .listGroup {
     top: 0px; }
+
+@media screen and (max-width: 991px) {
+  .blog {
+    margin-top: 1.125rem; }
+  .container {
+    width: 100%;
+    max-width: 80rem; }
+    .container .post {
+      padding: 0 2rem 2rem 2rem;
+      min-height: 0; }
+      .container .post .post-cover {
+        overflow: hidden;
+        max-height: 20rem;
+        margin-bottom: 1rem;
+        display: block; } }
 
 .postContent h1 {
   font-family: 'medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif';

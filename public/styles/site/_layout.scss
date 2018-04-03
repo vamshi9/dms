@@ -28,10 +28,6 @@ body:not(.side-nav){
   }
 }
 
-@media only screen and (max-width: 992px) {
- 
-}
-
 /**Navbar**/
 .logo{
   vertical-align: middle;
@@ -93,7 +89,8 @@ iframe{
   border: none;
 }
 
-footer{
+.page-footer{
+  background-color: #23334B;
   div.flex-center{
      a{
        margin :.4vw;

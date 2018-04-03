@@ -1,71 +1,50 @@
-<div class="container-fluid blog">
-	<h1 class="center-align">Showing Recent {{data.posts.results.length}} posts</h4>
-	
-	{{!-- <div class="row">
-		{{#each data.posts.results}}
-				<div class="col l10 post">
-					<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" >
-						<div class="col l4">{{#if image}}
-							<img src="{{{cloudinaryUrl image crop='fit' }}}" class="img pull-right responsive-img z-depth-5">{{/if}}</div>
-						<div class="col l8 blogText">
-							<h4>
-								<a href="{{postUrl slug}}" class="bold">{{{title}}}</a>
-							</h4>
-							<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
-							</p>
-							<p class="truncate">{{{content.brief}}}</p>
-							{{#if content.extended}}
-							<p class="read-more">
-								<a href="{{postUrl slug}}">Read more...</a>
-							</p>{{/if}}
-						</div>
-					</div>
-				</div>				
-		{{/each}}
-		<div class="col l2 listGroup hide-on-small-only">
-			<ul class="right">
-					<li><a href="/blog" class="active list-group-item">All Categories</a></li>
-					{{#each data.categories }}
-						<li><a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a></li>
-					{{/each}}
-			</ul>
-		</div>
-	</div> --}}
-	<div class="row">
-		<div class="col l10">
+<div class="container blog">
+	<h1 class="center-align">Showing Recent {{data.posts.results.length}} posts</h1>
+	<div class="row no-gutters">
+		<section class="col l8 m12 s12">
 			{{#each data.posts.results}}
-				
-					<div class="col l10 post">
-						<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" >
-							<div class="col l4">{{#if image}}
-								<img src="{{{cloudinaryUrl image width=288 height=192 crop='fit' }}}" class=" materialboxed img pull-right responsive-img z-depth-5">{{/if}}</div>
-							<div class="col l8 blogText">
-								<h6>
-									<a href="{{postUrl slug}}" class="bold">{{{title}}}</a>
-								</h6>
-								<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
-								</p>
-								<p>{{{content.brief}}}</p>
-								{{#if content.extended}}
-								<p class="read-more">
-									<a href="{{postUrl slug}}">Read more...</a>
-								</p>{{/if}}
-							</div>
+			<article class="post">
+				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
+					<a class="post-cover">{{#if image}}
+						<img src="{{{cloudinaryUrl image width=288 height=192 }}}" alt='{{{title}}}' >{{/if}}
+					</a>
+					<header>
+						<h2 class="post-title">
+							<a href="{{postUrl slug}}">{{{title}}}</a>
+						</h2>
+						<div class="post-meta">
+							<p class="lead text-muted">
+								{{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
+								<br> {{date}}
+							</p>
 						</div>
-						<div class="divider"></div>
-					</div>		
+					</header>
+					<section class="post-body">
+						<p class="truncate">{{content.brief}}</p>
+						{{#if content.extended}}
+						<a class="waves-effect waves-light btn " href="{{postUrl slug}}">Read more</a>
+						{{/if}}
+					</section>
+				</div>
+			</article>
 			{{/each}}
-			
-		</div>
-		
-		<div class="col l2">
-			<ul class="navbar-fixed">
-				<li><a href="/blog" class="active list-group-item">All Categories</a></li>
-				{{#each data.categories }}
-					<li><a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a></li>
-				{{/each}}
-			</ul>
-		</div>
+
+		</section>
+
+		<aside class="col l4 blog-sidebar hide-on-med-and-down ">
+			<div class="widget">
+				<ul>
+					<li>
+						<blockquote><a href="/blog" class="blockquote">All Categories</a></blockquote>
+					</li>
+					{{#each data.categories}}
+						<li>
+							<div><i class=" material-icons">wifi</i><a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a></div>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+		</aside>
 	</div>
 	{{>pagination}}
 

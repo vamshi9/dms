@@ -27,9 +27,18 @@ module.exports = function () {
 			return options.inverse(this);
 		}
 	};
+
+	_helpers.add = function (val) {
+		return val + 1;
+	}
 	
-	_helpers.add = function(val){
-		return val+1;
+	
+	_helpers.ifEven = function (val) {
+			if (val % 2 == 0) {
+				return 'col s12 m10 offset-m1 l5';
+			} else {
+				return 'col s12 m10 offset-m1 l5 offset-l7';
+			}
 	}
 	/**
 	 * Port of Ghost helpers to support cross-theming
@@ -98,7 +107,7 @@ module.exports = function () {
 		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
 		var output = '';
 
-		function createTagList (tags) {
+		function createTagList(tags) {
 			var tagNames = _.map(tags, 'name');
 
 			if (autolink) {
@@ -183,8 +192,7 @@ module.exports = function () {
 			options.hash.secure = keystone.get('cloudinary secure') || false;
 			var imageName = context.public_id.concat('.', context.format);
 			return cloudinary.url(imageName, options.hash);
-		}
-		else {
+		} else {
 			return null;
 		}
 	};
@@ -211,8 +219,8 @@ module.exports = function () {
 	};
 
 	//calendarUrl
-	_helpers.calendarUrl = function(calendarSlug,options){
-		return ('/calendars/' +  calendarSlug)
+	_helpers.calendarUrl = function (calendarSlug, options) {
+		return ('/calendars/' + calendarSlug)
 	}
 
 	// ### Pagination Helpers
@@ -220,9 +228,9 @@ module.exports = function () {
 	// Mostly generalized and with a small adjust to `_helper.pageUrl` could be universal for content types
 
 	/*
-	* expecting the data.posts context or an object literal that has `previous` and `next` properties
-	* ifBlock helpers in hbs - http://stackoverflow.com/questions/8554517/handlerbars-js-using-an-helper-function-in-a-if-statement
-	* */
+	 * expecting the data.posts context or an object literal that has `previous` and `next` properties
+	 * ifBlock helpers in hbs - http://stackoverflow.com/questions/8554517/handlerbars-js-using-an-helper-function-in-a-if-statement
+	 * */
 	_helpers.ifHasPagination = function (postContext, options) {
 		// if implementor fails to scope properly or has an empty data set
 		// better to display else block than throw an exception for undefined
@@ -257,7 +265,10 @@ module.exports = function () {
 			// get the pageUrl using the integer value
 			var pageUrl = _helpers.pageUrl(page);
 			// wrapup the html
-			html += '<li' + liClass + '>' + linkTemplate({ url: pageUrl, text: pageText }) + '</li>\n';
+			html += '<li' + liClass + '>' + linkTemplate({
+				url: pageUrl,
+				text: pageText
+			}) + '</li>\n';
 		});
 		return html;
 	};

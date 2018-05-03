@@ -1,10 +1,11 @@
 var keystone = require('keystone');
 var async = require('async');
+	User = keystone.list('User');
 
 exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
-	var locals = res.locals;
+	let locals = res.locals;
 
 	locals.section = 'blog';
 	locals.filters = {
@@ -12,7 +13,7 @@ exports = module.exports = function (req, res) {
 	};
 	locals.data = {
 		posts: [],
-		categories: [],
+		categories: []
 	};
 
 	view.on('init', function (next) {
@@ -45,6 +46,7 @@ exports = module.exports = function (req, res) {
 		if (req.params.category) {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
 				locals.data.category = result;
+				console.log(result);
 				next(err);
 			});
 		} else {
@@ -56,7 +58,7 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('Post').paginate({
 			page: req.query.page || 1,
-			perPage: 9,
+			perPage: 5,
 			//maxPages: 10,
 			// filters: {
 			// 	state: 'published',
@@ -71,7 +73,17 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
-			//console.log(results);
+			//console.log(locals.data.posts.results);
+			for(var x in results.results){
+				let updatedBy = results.results[x].updatedBy;				
+				User.model.findById(updatedBy).exec(function(error,user){
+					locals.data.posts.results[x].userDetails = user;
+					next(error);
+					//console.log(locals.data.posts.results[x].userDetails);
+				});		
+				//console.log(locals.data.posts.results[x].userDetails);
+			}
+			//console.log(locals.data.posts.results.userDetails);
 			next(err);
 		});
 	});

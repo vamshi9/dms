@@ -1,6 +1,13 @@
 body {
   overflow-x: hidden; }
 
+#body {
+  display: -webkit-flex;
+  min-height: 100vh;
+  flex-direction: column; }
+  #body main {
+    flex: 1 0 auto; }
+
 /*Side fixed Navbar*/
 .side-nav li a {
   color: white; }
@@ -132,18 +139,35 @@ iframe {
     padding: 2.5vw 0 0 40vw; }
 
 .teaching {
-  padding: 6vw; }
-  .teaching .col.s4.m4.l3 {
-    display: inline-block; }
-    .teaching .col.s4.m4.l3 img {
-      display: inline-block;
-      width: 65px;
-      height: 65px; }
-    .teaching .col.s4.m4.l3 p {
-      display: inline-block; }
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 40px; }
+  .teaching h1 {
+    margin-top: 0px;
+    margin-bottom: 60px;
+    font: bold italic 2em/1em "Times New Roman", "MS Serif", "New York", serif;
+    color: #e7ce00;
+    border-top: solid #e7ce00 medium;
+    border-bottom: dotted #e7ce00 thin; }
+  .teaching .input-field {
+    margin-top: 0px; }
+  .teaching div.flow-text {
+    font-family: cursive; }
+  .teaching .col.s4.m4.l3 img {
+    margin-top: 25px;
+    width: 65px;
+    height: 65px; }
+  .teaching .col.s4.m4.l3 p {
+    display: block; }
 
 .profile {
   padding: 20vh 30vh 0 30vh; }
+  .profile .card-panel {
+    margin: 0px;
+    color: white;
+    font-family: cursive; }
   .profile .profileInfo {
     border: 0.75px solid #cecdcd; }
   .profile button {
@@ -159,7 +183,11 @@ iframe {
     padding: 0; } }
 
 .contact {
-  padding: 7.5vh; }
+  padding: 17.5vh; }
+  .contact .card-panel {
+    margin: 0px;
+    color: white;
+    font-family: cursive; }
 
 .blog {
   width: 100%;
@@ -278,7 +306,7 @@ iframe {
         display: block; } }
 
 .postContent h1 {
-  font-family: 'medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif';
+  font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
   font-weight: 600;
   font-size: 42px;
   font-style: normal;
@@ -286,7 +314,7 @@ iframe {
   color: rgba(0, 0, 0, 0.84); }
 
 .postContent h5 p {
-  font-family: 'medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif';
+  font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
   color: rgba(0, 0, 0, 0.54);
   font-weight: 400;
   font-size: 28px;
@@ -294,7 +322,7 @@ iframe {
   font-style: normal; }
 
 .postContent .postFlow p {
-  font-family: 'medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif';
+  font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: normal;
   font-size: 21px;
   font-weight: 400;

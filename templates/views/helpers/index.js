@@ -214,7 +214,7 @@ module.exports = function () {
 	};
 
 	// create the category url for a blog-category page
-	_helpers.categoryUrl = function (categorySlug, options) {
+	_helpers.categoryUrl = function (categorySlug,options) {
 		return ('/blog/' + categorySlug);
 	};
 

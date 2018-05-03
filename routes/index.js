@@ -37,7 +37,7 @@ exports = module.exports = function (app) {
 	app.get('/profile', function (req, res) {
 		res.render('profile.hbs');
 	});
-	app.get('/teaching-initiatives', routes.views.teaching);
+	app.all('/teaching-initiatives', routes.views.teaching);
 
 	/*Multer Pending*/
 	// app.post('/update',(req, res) => {

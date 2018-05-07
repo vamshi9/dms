@@ -8,7 +8,8 @@ exports = module.exports = function(req,res){
     locals.section = 'teaching';
     locals.data = {
         teachingData :[],
-        year : ''
+        year : '',
+        //userName : ''
     }
     view.on('init',function(next){
         var year = req.body.year || 2018;
@@ -16,16 +17,14 @@ exports = module.exports = function(req,res){
         teaching.exec(function(err,results){
             locals.data.teachingData = results;
             locals.data.year = year;
-            //for(var x in locals.data.teachingData){
-              //  locals.data.teachingData[x].year = year;
-                //var userInfo = User.model.findOne(updatedby).exec(function(err,user){
-                   //locals.data.teachingData[x].updatedBy = "vamshi"; 
-                  //console.log(x + " is  " + locals.data.teachingData[x]);
-                 // locals.data.teachingData[x].concat({'a' : 'b'});
-               // });
-               // locals.data.teachingData[x] = JSON.stringify(locals.data.teachingData[x]) + {'a' : 'b'};
-            //}
-           //console.log(locals.data.teachingData)            
+            // for(var x in locals.data.teachingData){
+            //     var updatedby = locals.data.teachingData[x].updatedBy;
+            //     var userInfo = User.model.findOne(updatedby).exec(function(err,user){
+            //     locals.data.userName = user.name.first + user.name.last; 
+            //     //console.log(x + " is  " + locals.data.userName);
+            //    });
+            // }
+           //console.log(locals.data.userName)            
             next(err);
         });    
     });

@@ -73,17 +73,16 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
-			//console.log(locals.data.posts.results);
-			for(var x in results.results){
-				let updatedBy = results.results[x].updatedBy;				
-				User.model.findById(updatedBy).exec(function(error,user){
-					locals.data.posts.results[x].userDetails = user;
-					next(error);
-					//console.log(locals.data.posts.results[x].userDetails);
-				});		
-				//console.log(locals.data.posts.results[x].userDetails);
-			}
-			//console.log(locals.data.posts.results.userDetails);
+			// locals.data.posts.results.forEach(function(element,index){		
+			// 	let updatedBy = locals.data.posts.results.updatedBy;
+			// 	User.model.findById(updatedBy).exec(function(error,user){
+			// 		element.userDetails = user.name.first + user.name.last;
+					
+			// 		next(error);
+			// 	});
+				
+			
+			// });
 			next(err);
 		});
 	});

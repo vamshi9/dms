@@ -10,7 +10,7 @@ var Publications = new keystone.List('Publications',{
 Publications.add({
      title                       : {type : String, required : true},
      state                       : {type : Types.Select, options : 'Submitted, Accepted',default : 'Submitted'},
-     author                      : {type : String},
+     authors                      : {type : String},
      journal                     : {type : String},
      publishedDate               : {type : Types.Date},
 });

@@ -10,7 +10,7 @@ var Teaching = new keystone.List('teaching',{
 
 Teaching.add({
     title : {type : String, required :true},
-    course : {type : String},
+    courseCode : {type : String},
     semester : {type : Types.Select, options : 'semesterI,semesterII'},
     year : {type : Types.Select , options : '2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018'},
     professorName : {type : String},

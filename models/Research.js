@@ -7,6 +7,7 @@ var Research = new keystone.List('research',{
     defaultSort : '-createdAt'
 });
 
+
 Research.add({
      title                       : {type : String, required : true},
      state                       : {type : Types.Select, options : 'Submitted, Ongoing , Completed',default : 'Submitted'},

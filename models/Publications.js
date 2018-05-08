@@ -8,11 +8,11 @@ var Publications = new keystone.List('Publications',{
 });
 
 Publications.add({
-     title                       : {type : String, required : true},
-     state                       : {type : Types.Select, options : 'Submitted, Accepted',default : 'Submitted'},
-     authors                      : {type : String},
-     journal                     : {type : String},
-     publishedDate               : {type : Types.Date},
+     title                              : {type : String, required : true},
+     state                              : {type : Types.Select, options : 'Submitted, Accepted',default : 'Submitted'},
+     authors                            : {type : String},
+     journalOrBook                      : {type : String},
+     publishedDate                      : {type : Types.Date},
 });
 
 /**Changing the date format**/

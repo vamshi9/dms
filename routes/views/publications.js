@@ -13,8 +13,8 @@ exports = module.exports =function(req,res){
 
     //Load the Publications projects
     view.on('init',function(next){
-       var submitted = Publications.model.find().where('state',"Submitted").sort('publishedDate');
-       var accepted  = Publications.model.find().where('state','Accepted').sort('publishedDate');
+       var submitted = Publications.model.find().where('state',"Submitted").sort('-publishedDate');
+       var accepted  = Publications.model.find().where('state','Accepted').sort('-publishedDate');
        
        submitted.exec(function(err,results){
             locals.data.submitted = results;

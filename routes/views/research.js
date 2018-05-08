@@ -14,9 +14,9 @@ exports = module.exports =function(req,res){
 
     //Load the research projects
     view.on('init',function(next){
-       var submitted = Research.model.find().where('state',"Submitted").sort('from');
-       var onGoing  = Research.model.find().where('state','Ongoing').sort('from');
-       var completed  = Research.model.find().where('state','Completed').sort('from');
+       var submitted = Research.model.find().where('state',"Submitted").sort('-from');
+       var onGoing  = Research.model.find().where('state','Ongoing').sort('-from');
+       var completed  = Research.model.find().where('state','Completed').sort('-from');
        
        submitted.exec(function(err,results){
             locals.data.submitted = results;

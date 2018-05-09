@@ -7,7 +7,8 @@ exports.initLocals = function (req, res, next) {
 		//{ label: 'Gallery', key: 'gallery', icon:'filter',href:'/gallery'},
 		{ label : 'Research', key : 'research' , icon:'track_changes',href:'/research'},
 		{ label : 'Publications', key : 'publications', icon:'library_books',href:'/publications'},
-		{ label : 'Teaching Initiatives', key : 'teaching', icon:'spa',href:'/teaching-initiatives'}
+		{ label : 'Teaching Initiatives', key : 'teaching', icon:'spa',href:'/teaching-initiatives'},
+		{ label : 'Reviews',key: 'reviews', icon : 'stars' , href : '/reviews'}
 	];
 	res.locals.user = req.user;
 	

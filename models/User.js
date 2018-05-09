@@ -16,7 +16,9 @@ User.schema.virtual('canAccessKeystone').get(function () {
 	return this.isAdmin;
 });
 
-User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' });
+//give access to other models 
+User.relationship({ref: 'Post', path: 'posts', refPath: 'author' });
+User.relationship({ref : 'Reviews',path : 'reviews',refPath : 'professor'});
 
 User.defaultColumns = 'name, email, isAdmin';
 User.register();

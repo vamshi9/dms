@@ -13,20 +13,19 @@ exports = module.exports =function(req,res){
 
     //Load the Publications projects
     view.on('init',function(next){
-       var submitted = Publications.model.find().where('state',"Submitted").sort('-publishedDate');
-       var accepted  = Publications.model.find().where('state',"Accepted").sort('-publishedDate');
-       
-       submitted.exec(function(err,results){
-            locals.data.submitted = results;
-            //console.log("submittted projects : " + locals.data.submitted);
-            next(err);
-       });
+       var accepted  = Publications.model.find().where('state',"Accepted").sort('-publishedDate');     
        accepted.exec(function(err,results){
-            locals.data.accepted = results;          
-            //console.log("completed projects : " + locals.data.accepted);  
-            next(err);
+            locals.data.accepted = results;   
+            next(err);       
        });
        
     });
+    view.on('init',function(next){
+        var submitted = Publications.model.find().where('state',"Submitted").sort('-publishedDate');
+        submitted.exec(function(err,results){
+            locals.data.submitted = results;
+            next(err);
+       });
+    })
     view.render('publications');
 }

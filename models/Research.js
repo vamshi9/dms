@@ -16,7 +16,20 @@ Research.add({
      fundingAgency               : {type : String},
      sanctionedAmount            : {type : Number,note:'lakhs'},
      from                        : {type : Types.Date},
-     to                          : {type : Types.Date},
+     to                          : {type : Types.Date,hidden : false},
+});
+
+//accessing state of research
+
+
+
+Research.schema.pre('save',function(next){
+    if(this.state=="Submitted"){
+        console.log(this.from);
+        //this.from.label = 'on';
+        // this.to.hidden = 'true';
+    }
+    next();
 });
 
 /**Can we call it with one function?**/

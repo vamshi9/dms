@@ -1,151 +1,159 @@
 <!DOCTYPE html>
-<html >
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>dataMS</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		<link href="/styles/site.css" rel="stylesheet"/>
+<html>
 
-		{{!-- This file provides the default styling for the KeystoneJS Content Editor
-			- only renders when user is logged in and admin--}}
-		{{{isAdminEditorCSS user}}}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dataMS</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="/styles/site.css" rel="stylesheet" />
 
-		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8 --}}
-		<!--[if lt IE 9]>
+	{{!-- This file provides the default styling for the KeystoneJS Content Editor
+	- only renders when user is logged in and admin--}}
+	{{{isAdminEditorCSS user}}}
+
+	{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+	//- Safely remove this block if you are not targeting IE8 --}}
+	<!--[if lt IE 9]>
 			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
 			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-	</head>
-	<body>
-			
-			<ul id="slide-out" class="side-nav">
-				<li><div class="user-view">
+</head>
+
+<body>
+
+	<ul id="slide-out" class="side-nav">
+		<li>
+			<div class="user-view">
 				<a><img class="circle responsive-img" src={{user.profilePhoto.url}}></a>
 				<a href="#!name"><span class="white-text name">Prof. {{user.name.first}} {{user.name.last}}</span></a>
 				<a href="#!email"><span class="white-text email">{{user.email}}</span></a>
 				<a href="" class=""></a>
-				</div></li>
-				<li><div class="divider"></div></li>
-				<li><a href="/admin"><i class="material-icons white-text">dashboard</i>Dashboard</a></li>
-				{{#each navLinks}}
-					<li {{#ifeq ../section key}} class="nav-item active no-padding"{{else}}{{/ifeq}}>
-						<ul class="collapsible collapsible-accordion">
-						<li>
-							{{#if dropDown}}
-							<a class="nav-link collapsible-header"><i class="material-icons white-text">{{icon}}</i>{{ label }}<i class="material-icons right white-text">arrow_drop_down</i></a>
-							<div class="collapsible-body">
-								<ul>
-									{{#each dropDown}}
-										<li><a >{{this}}</a></li>
-									{{/each}}
-								</ul>
-							</div>
-							{{else}}
-								<a href= "{{href}}" class="nav-link"><i class="material-icons white-text">{{icon}}</i>{{ label }}</a>
-							{{/if}}
-						</li>
-						</ul>
-					</li>
-				{{/each}}
-				<li><a href="/contact"><i class="material-icons white-text">mail_outline</i>Contact</a></li>
-				<li><a href="/profile"><i class="material-icons white-text">person</i> Profile</a></li>
-				<li><a class="waves-effect" href="/admin/signout"><i class="material-icons white-text">power_settings_new</i>Sign-out</a></li>
-			</ul>
-						
-			<div class="navbar-fixed">
-				<nav>
-					<div class="nav-wrapper">		
-						<a href="" data-activates="slide-out" class="buttonCollapse"><i class="material-icons left">menu</i></a>
-						<ul class="right hide-on-med-and-down">
-							<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
-							<li><a href=""><i class="material-icons right white-text">schedule</i></a></li>
-							<li><a href=""><i class="material-icons right white-text">chat_bubble_outline</i></a></li>
-							<li><a href="" ><img src="/images/logo.png" alt="" class=" logo"> DMS</a></li>
-						</ul>
-						<ul class="right hide-on-large-only">
-							<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
-							<li><a href=""><img src="images/logo.png" alt="" class=" logo"> DMS</a></li>
+			</div>
+		</li>
+		<li>
+			<div class="divider"></div>
+		</li>
+		<li><a href="/admin"><i class="material-icons white-text">dashboard</i>Dashboard</a></li>
+		{{#each navLinks}}
+		<li {{#ifeq ../section key}} class="nav-item active no-padding" {{else}} {{/ifeq}}>
+			<ul class="collapsible collapsible-accordion">
+				<li>
+					{{#if dropDown}}
+					<a class="nav-link collapsible-header"><i class="material-icons white-text">{{icon}}</i>{{ label }}<i class="material-icons right white-text">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							{{#each dropDown}}
+							<li><a>{{this}}</a></li>
+							{{/each}}
 						</ul>
 					</div>
-				</nav>
+					{{else}}
+					<a href="{{href}}" class="nav-link"><i class="material-icons white-text">{{icon}}</i>{{ label }}</a>
+					{{/if}}
+				</li>
+			</ul>
+		</li>
+		{{/each}}
+		<li><a href="/contact"><i class="material-icons white-text">mail_outline</i>Contact</a></li>
+		<li><a href="/profile"><i class="material-icons white-text">person</i> Profile</a></li>
+		<li><a class="waves-effect" href="/admin/signout"><i class="material-icons white-text">power_settings_new</i>Sign-out</a></li>
+	</ul>
+
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="" data-activates="slide-out" class="buttonCollapse"><i class="material-icons left">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
+					<li><a href=""><i class="material-icons right white-text">schedule</i></a></li>
+					<li><a href=""><i class="material-icons right white-text">chat_bubble_outline</i></a></li>
+					<li><a href=""><img src="/images/logo.png" alt="" class=" logo"> DMS</a></li>
+				</ul>
+				<ul class="right hide-on-large-only">
+					<li><a href="/"><i class="material-icons white-text ">home</i></a></li>
+					<li><a href=""><img src="images/logo.png" alt="" class=" logo"> DMS</a></li>
+				</ul>
 			</div>
-		<div id="body">
-			{{!-- <div class="top" onclick="removeIFrame();"></div>
-	    <iframe width="350" height="430" id="mychatbot" src="https://console.dialogflow.com/api-client/demo/embedded/f067576f-8f9d-42e3-b0bc-97dc191cc64b">
-			</iframe>
-			<div class="top"></div>
-      <img class="mychatbot" src="../images/chatbot.png"/> --}}
-			<!--
+		</nav>
+	</div>
+	<div id="body">
+		{{!-- <div class="top" onclick="removeIFrame();"></div>
+		<iframe width="350" height="430" id="mychatbot" src="https://console.dialogflow.com/api-client/demo/embedded/f067576f-8f9d-42e3-b0bc-97dc191cc64b">
+		</iframe>
+		<div class="top"></div>
+		<img class="mychatbot" src="../images/chatbot.png" /> --}}
+		<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
 				validation errors, success messages, etc
 			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
-				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
+		{{#if messages}}
+		<div id="flash-messages" class="container">
+			{{#if messages.info}}
+			<div class="alert alert-info">
+				{{{flashMessages messages.info}}}
 			</div>
 			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
+			{{#if messages.success}}
+			<div class="alert alert-success">
+				{{{flashMessages messages.success}}}
+			</div>
+			{{/if}}
+			{{#if messages.warning}}
+			<div class="alert alert-warning">
+				{{{flashMessages messages.warning}}}
+			</div>
+			{{/if}}
+			{{#if messages.error}}
+			<div class="alert alert-danger">
+				{{{flashMessages messages.error}}}
+			</div>
+			{{/if}}
 		</div>
-		<footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">BITS PILANI HYDERABAD CAMPUS</h5>
-                <p class="grey-text text-lighten-4">An institution deemed to be a University estd. vide Sec.3 of the UGC Act,1956 under notification # F.12-23/63.U-2 of Jun 18,1964</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container center-align">
-            © 2017-2018 Vamshi Bachaneboina
-            {{!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> --}}
-            </div>
-          </div>
-        </footer>
-		{{!--
-			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-		<script src="/js/navShrink.js"></script>
-		<script src="/js/main.js"></script>
-		{{{isAdminEditorJS user}}}
-	</body>
+		{{/if}}
+		<!-- The content block should contain the body of your template's content-->
+		{{{body}}}
+	</div>
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">BITS PILANI HYDERABAD CAMPUS</h5>
+					<p class="grey-text text-lighten-4">An institution deemed to be a University estd. vide Sec.3 of the UGC Act,1956
+						under notification # F.12-23/63.U-2 of Jun 18,1964</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container center-align">
+				© 2017-2018 Vamshi Bachaneboina
+				{{!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> --}}
+			</div>
+		</div>
+	</footer>
+	{{!--
+	//- jQuery 1.11.3 is included by default, and required by both Bootstrap
+	//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+	//- you can upgrade to 2.1.4 (also bundled) for better performance.
+	--}}
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="/js/navShrink.js"></script>
+	<script src="/js/main.js"></script>
+	{{{isAdminEditorJS user}}}
+</body>
+
 </html>

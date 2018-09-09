@@ -1,9 +1,9 @@
 
-require('dotenv').config();
+//require('dotenv').config();
 
-var keystone = require('keystone');
-var handlebars = require('express-handlebars');
-
+const keystone = require('keystone');
+const handlebars = require('express-handlebars');
+const port = process.env.PORT || 7000
 keystone.init({
 	'name': 'DMS',
 	'brand': 'DMS',
@@ -60,5 +60,5 @@ keystone.set('signin redirect','/');
 // 	+ '\nset up your mailgun integration');
 // }
 
-keystone.set('port',7000);
+keystone.set('port',port);
 keystone.start();

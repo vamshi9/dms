@@ -1,5 +1,5 @@
 
-//require('dotenv').config();
+require('dotenv').config();
 
 const keystone = require('keystone');
 const handlebars = require('express-handlebars');

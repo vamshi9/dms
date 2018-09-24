@@ -37,8 +37,9 @@ exports = module.exports = function (app) {
 	app.get('/profile', function (req, res) {
 		res.render('profile.hbs');
 	});
-	app.get('/reviews',routes.views.reviews);
+	app.all('/review',routes.views.review);
 	app.all('/teaching-initiatives', routes.views.teaching);
+	app.all('/contact', routes.views.contact);
 
 	/*Multer Pending*/
 	// app.post('/update',(req, res) => {
@@ -71,5 +72,4 @@ exports = module.exports = function (app) {
 	// 	})
 		
 	// });
-	app.all('/contact', routes.views.contact);
 };

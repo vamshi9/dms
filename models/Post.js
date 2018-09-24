@@ -6,12 +6,12 @@ var Post = new keystone.List('Post', {
 	autokey: { path: 'slug', from: 'title', unique: true },
 	defaultSort : 'createdAt',
 	drilldown  : 'author',
-	track : true
-});
+	track : true,
+})
 
 Post.add({
 	title: { type: String, required: true },
-	author: { type: Types.Relationship, ref: 'User'},
+	author: { type: Types.Relationship, ref: 'User', hidden: true},
 	image: { type: Types.CloudinaryImage },
 	content: {
 		brief: { type: Types.Textarea, wysiwyg: true, height: 75 },

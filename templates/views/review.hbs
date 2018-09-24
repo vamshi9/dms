@@ -2,16 +2,16 @@
 	<div class="row">
 		<div class="col s8 col m10">
 			<div class="card-panel teal lighten-2 center-align">
-				CONTACT FORM
+				STUDENT FEEDBACK
 			</div>
 			<div class="card">
 				<div class="card-content">
-					{{#if enquirySubmitted}}
-					<h3>Thanks for getting in touch.</h3>
-					<a href="/contact">Submit another enquiry</a>
+					{{#if reviewSubmitted}}
+					<h3>Head of the Department has received the feedback.</h3>
+					<a href="/review">Submit another feedback</a>
 					{{else}}
 					<form method="post">
-						<input type="hidden" name="action" value="contact">
+						<input type="hidden" name="action" value="review">
 						<div class="input-field col s12 {{#if validationErrors.name}}has-error{{/if}}">
 							<label>Name</label>
 							<input type="text" name="name.full" class="form-control" value="Dr. {{user.name.first}} {{user.name.last}} " readonly>
@@ -41,7 +41,6 @@
 						<div class="form-actions">
 							<button type="submit" class="btn btn-primary">Send</button>
 						</div>
-
 					</form>
 					{{/if}}
 				</div>

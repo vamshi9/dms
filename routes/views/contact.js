@@ -1,10 +1,10 @@
-var keystone = require('keystone');
-var Enquiry = keystone.list('Enquiry');
+const keystone = require('keystone');
+const Enquiry = keystone.list('Enquiry');
 
-exports = module.exports = function (req, res) {
+exports = module.exports =  (req, res) => {
 
-	var view = new keystone.View(req, res);
-	var locals = res.locals;
+	const view = new keystone.View(req, res);
+	const locals = res.locals;
 
 	locals.section = 'contact';
 	locals.enquiryTypes = Enquiry.fields.enquiryType.ops;
@@ -14,8 +14,8 @@ exports = module.exports = function (req, res) {
 
 	view.on('post', { action: 'contact' }, function (next) {
 
-		var newEnquiry = new Enquiry.model();
-		var updater = newEnquiry.getUpdateHandler(req);
+		const newEnquiry = new Enquiry.model();
+		const updater = newEnquiry.getUpdateHandler(req);
 
 		updater.process(req.body, {
 			flashErrors: true,

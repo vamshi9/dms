@@ -12,9 +12,21 @@
 					{{else}}
 					<form method="post">
 						<input type="hidden" name="action" value="review">
-						<div class="input-field col s12 {{#if validationErrors.name}}has-error{{/if}}">
-							<label>Name</label>
-							<input type="text" name="name.full" class="form-control" value="Dr. {{user.name.first}} {{user.name.last}} " readonly>
+						<div class="input-field col s12 {{#if validationErrors.student}}has-error{{/if}}">
+							<label>Student Name</label>
+							<input type="text" name="student" class="form-control" placeholder="student name">
+						</div>
+						<div class="input-field col s12 {{#if validationErrors.bitsId}}has-error{{/if}}">
+							<label>BITS ID</label>
+							<input type="text" name="bitsId" class="form-control" placeholder="ID No.">
+						</div>
+						<div class="input-field col s12 {{#if validationErrors.professor}}has-error{{/if}}">
+							<label>Professor Name</label>
+							<input type="text" name="professor" class="form-control" value="Dr. {{user.name.first}} {{user.name.last}} " readonly>
+						</div>
+						<div class="input-field col s12 {{#if validationErrors.project}}has-error{{/if}}">
+							<label>Project Name</label>
+							<input type="text" name="project" class="form-control" placeholder="project name">
 						</div>
 						<div class="input-field col s12 {{#if validationErrors.email}}has-error{{/if}}">
 							<label>Email</label>
@@ -24,16 +36,17 @@
 							<label>Phone</label>
 							<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
 						</div>
-						{{!--
-						<div class="input-field col s12 {{#if validationErrors.enquiryType}}has-error{{/if}}">
-							<label>What are you contacting us about?</label>
-							<select name="enquiryType" class="form-control">
-								<option value="">(select one)</option>
-								{{#each enquiryTypes}}
+						
+						<div class="input-field col s12 {{#if validationErrors.reviewType}}has-error{{/if}}">
+							<label></label>
+							<select name="reviewType" class="form-control">
+								<option value="">What is the feedback about?</option>
+								{{#each reviewTypes}}
 								<option value="{{value}}">{{label}}</option>
 								{{/each}}
 							</select>
-						</div> --}}
+						</div>
+
 						<div class="input-field col s12 {{#if validationErrors.message}}has-error{{/if}} ">
 							<label>Message</label>
 							<textarea name="message" placeholder="Leave us a message..." id="textarea1" class="materialize-textarea" data-length="120">{{formData.message}}</textarea>

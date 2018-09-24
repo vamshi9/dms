@@ -1,23 +1,28 @@
-var keystone = require('keystone');
-var Types = keystone.Field.Types;
+const keystone = require('keystone');
+const Types = keystone.Field.Types;
 
-var Review = new keystone.List('Review', {
+const Review = new keystone.List('Review', {
 	nocreate: true,
     noedit: true,
-    autokey : {path : 'slug', from : 'name' , unique : true},
+    autokey : {path : 'slug', from : 'student' , unique : true},
+	map: {name: 'student'}
 });
 
 Review.add({
-	//studentName: {type:String, required:true},
-	name: { type: Types.Name, required: true },
+	student: {type:String, required:true},
+	bitsId: {type:String, required:true},
+	professor: { type: Types.Name, required: true },
+	project: {type: String, required: true},
+	semester: {type: Types.Select, options:'1,2'},
+	howSatisfied: {type: Types.Select, options:'1,2,3,4,5,6,7,8,9,10'},
+	reviewType: { type: Types.Select, options: [
+		{ value: 'regular', label: 'Just leaving a feedback' },
+		{ value: 'interruption', label: 'Something is wrong' },
+		{ value: 'other', label: 'Something else...' },
+	], required: true },
+	comments: { type: Types.Markdown, required: true },
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
-	reviewType: { type: Types.Select, options: [
-		{ value: 'message', label: 'Just leaving a message' },
-		{ value: 'question', label: 'I\'ve got a question' },
-		{ value: 'other', label: 'Something else...' },
-	] },
-	message: { type: Types.Markdown, required: true },
 	createdAt: { type: Date, default: Date.now },
 });
 
@@ -46,8 +51,8 @@ Review.schema.methods.sendNotificationEmail = function (callback) {
 		return callback(new Error('could not find mailgun credentials'));
 	}
 
-	var review = this;
-	var brand = keystone.get('brand');
+	const review = this;
+	const brand = keystone.get('brand');
 
 	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
@@ -57,7 +62,7 @@ Review.schema.methods.sendNotificationEmail = function (callback) {
 		}).send({
 			to: admins,
 			from: {
-				name: 'dataMS',
+				name: 'DMS',
 				email: 'contact@datams.com',
 			},
 			subject: 'New Review for dataMS',
@@ -69,5 +74,5 @@ Review.schema.methods.sendNotificationEmail = function (callback) {
 };
 
 Review.defaultSort = '-createdAt';
-Review.defaultColumns = 'name, email, reviewType, createdAt';
+Review.defaultColumns = 'student, professor, reviewType, createdAt';
 Review.register();

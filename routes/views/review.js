@@ -13,16 +13,16 @@ exports = module.exports =  (req, res) => {
 	locals.reviewSubmitted = false;
 
     //todo: review template
-	view.on('post', { action: 'review' }, function (next) {
+	view.on('post', { action: 'review' },  (next) => {
 
 		const newReview = new Review.model();
 		const updater = newReview.getUpdateHandler(req);
 
 		updater.process(req.body, {
 			flashErrors: true,
-			fields: 'name, email, phone, reviewType, message',
+			fields: 'student, bitsId, professor, project, semester, howSatisfied , reviewType, comments, email, phone',
 			errorMessage: 'There was a problem submitting your review:',
-		}, function (err) {
+		}, (err) => {
 			if (err) {
                 locals.validationErrors = err.errors;
                 //console.log(validationErrors.name)

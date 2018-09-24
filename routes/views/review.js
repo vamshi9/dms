@@ -12,7 +12,7 @@ exports = module.exports =  (req, res) => {
 	locals.validationErrors = {};
 	locals.reviewSubmitted = false;
 
-    //todo: review template
+    //todo: review template :- vamsi
 	view.on('post', { action: 'review' },  (next) => {
 
 		const newReview = new Review.model();

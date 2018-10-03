@@ -3,18 +3,18 @@ const Types = keystone.Field.Types;
 
 const Review = new keystone.List('Review', {
 	nocreate: true,
-    noedit: true,
-    autokey : {path : 'slug', from : 'student' , unique : true},
-	map: {name: 'student'}
+	noedit: true,
+	autokey: { path: 'slug', from: 'student', unique: true },
+	map: { name: 'student' },
 });
 
 Review.add({
-	student: {type:String, required:true},
-	bitsId: {type:String, required:true},
+	student: { type: String, required: true },
+	bitsId: { type: String, required: true },
 	professor: { type: Types.Name, required: true },
-	project: {type: String, required: true},
-	semester: {type: Types.Select, options:'1,2'},
-	howSatisfied: {type: Types.Select, options:'1,2,3,4,5,6,7,8,9,10'},
+	project: { type: String, required: true },
+	semester: { type: Types.Select, options: '1,2' },
+	howSatisfied: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10' },
 	reviewType: { type: Types.Select, options: [
 		{ value: 'regular', label: 'Just leaving a feedback' },
 		{ value: 'interruption', label: 'Something is wrong' },

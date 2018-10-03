@@ -1,6 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
-	User = keystone.list('User');
+User = keystone.list('User');
 
 exports = module.exports = function (req, res) {
 
@@ -13,7 +13,7 @@ exports = module.exports = function (req, res) {
 	};
 	locals.data = {
 		posts: [],
-		categories: []
+		categories: [],
 	};
 
 	view.on('init', function (next) {
@@ -25,7 +25,7 @@ exports = module.exports = function (req, res) {
 			}
 
 			locals.data.categories = results;
-			//console.log(locals.data.categories);
+			// console.log(locals.data.categories);
 
 
 			async.each(locals.data.categories, function (category, next) {
@@ -46,7 +46,7 @@ exports = module.exports = function (req, res) {
 		if (req.params.category) {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
 				locals.data.category = result;
-				//console.log(result);
+				// console.log(result);
 				next(err);
 			});
 		} else {
@@ -73,15 +73,15 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
-			// locals.data.posts.results.forEach(function(element,index){		
+			// locals.data.posts.results.forEach(function(element,index){
 			// 	let updatedBy = locals.data.posts.results.updatedBy;
 			// 	User.model.findById(updatedBy).exec(function(error,user){
 			// 		element.userDetails = user.name.first + user.name.last;
-					
+
 			// 		next(error);
 			// 	});
-				
-			
+
+
 			// });
 			next(err);
 		});

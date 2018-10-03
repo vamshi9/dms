@@ -3,52 +3,52 @@ const keystone = require('keystone');
 
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [{
-			label: 'Blog',
-			key: 'blog',
-			icon: 'border_color',
-			href: '/blog'
-		},
-		//{ label: 'Gallery', key: 'gallery', icon:'filter',href:'/gallery'},
-		{
-			label: 'Research',
-			key: 'research',
-			icon: 'track_changes',
-			href: '/research'
-		},
-		{
-			label: 'Publications',
-			key: 'publications',
-			icon: 'library_books',
-			href: '/publications'
-		},
-		{
-			label: 'Teaching Initiatives',
-			key: 'teaching',
-			icon: 'spa',
-			href: '/teaching-initiatives'
-		},
-		{
-			label: 'Reviews',
-			key: 'review',
-			icon: 'stars',
-			href: '/review'
-		}
+		label: 'Blog',
+		key: 'blog',
+		icon: 'border_color',
+		href: '/blog',
+	},
+		// { label: 'Gallery', key: 'gallery', icon:'filter',href:'/gallery'},
+	{
+		label: 'Research',
+		key: 'research',
+		icon: 'track_changes',
+		href: '/research',
+	},
+	{
+		label: 'Publications',
+		key: 'publications',
+		icon: 'library_books',
+		href: '/publications',
+	},
+	{
+		label: 'Teaching Initiatives',
+		key: 'teaching',
+		icon: 'spa',
+		href: '/teaching-initiatives',
+	},
+	{
+		label: 'Reviews',
+		key: 'review',
+		icon: 'stars',
+		href: '/review',
+	},
 	];
 	res.locals.user = req.user;
 
 	var userInfo = req.user;
-	//console.log(userInfo);
+	// console.log(userInfo);
 
 	if (typeof userInfo === 'undefined') {
 		res.redirect('/admin/signin');
-	} else if (userInfo.name.first != "HOD") {
+	} else if (userInfo.name.first != 'HOD') {
 		keystone.set('nav', {
 			posts: ['posts', 'post-categories'],
 			galleries: 'galleries',
 			research: 'research',
 			publications: 'publications',
 			teaching: 'teaching',
-			departmentContribution: 'contribution'
+			departmentContribution: 'contribution',
 		});
 	} else {
 		keystone.set('nav', {
@@ -61,7 +61,7 @@ exports.initLocals = function (req, res, next) {
 			publications: 'publications',
 			teaching: 'teaching',
 			reviews: 'reviews',
-			departmentContribution: 'contribution'
+			departmentContribution: 'contribution',
 		});
 	}
 	next();
@@ -74,16 +74,16 @@ exports.initErrorHandlers = function (req, res, next) {
 		res.status(500).render('errors/500', {
 			err: err,
 			errorTitle: title,
-			errorMsg: message
+			errorMsg: message,
 		});
-	}
+	};
 
 	res.notfound = function (title, message) {
 		res.status(404).render('errors/404', {
 			errorTitle: title,
-			errorMsg: message
+			errorMsg: message,
 		});
-	}
+	};
 
 	next();
 

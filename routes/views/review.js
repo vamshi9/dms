@@ -1,7 +1,7 @@
 const keystone = require('keystone');
 const Review = keystone.list('Review');
 
-exports = module.exports =  (req, res) => {
+exports = module.exports = (req, res) => {
 
 	const view = new keystone.View(req, res);
 	const locals = res.locals;
@@ -12,8 +12,8 @@ exports = module.exports =  (req, res) => {
 	locals.validationErrors = {};
 	locals.reviewSubmitted = false;
 
-    //todo: review template :- vamsi
-	view.on('post', { action: 'review' },  (next) => {
+    // todo: review template :- vamsi
+	view.on('post', { action: 'review' }, (next) => {
 
 		const newReview = new Review.model();
 		const updater = newReview.getUpdateHandler(req);
@@ -24,8 +24,8 @@ exports = module.exports =  (req, res) => {
 			errorMessage: 'There was a problem submitting your review:',
 		}, (err) => {
 			if (err) {
-                locals.validationErrors = err.errors;
-                //console.log(validationErrors.name)
+				locals.validationErrors = err.errors;
+                // console.log(validationErrors.name)
 			} else {
 				locals.reviewSubmitted = true;
 			}

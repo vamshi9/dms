@@ -30,16 +30,16 @@ module.exports = function () {
 
 	_helpers.add = function (val) {
 		return val + 1;
-	}
-	
-	
+	};
+
+
 	_helpers.ifEven = function (val) {
-			if (val % 2 == 0) {
-				return 'col s12 m10 offset-m1 l5';
-			} else {
-				return 'col s12 m10 offset-m1 l5 offset-l7';
-			}
-	}
+		if (val % 2 == 0) {
+			return 'col s12 m10 offset-m1 l5';
+		} else {
+			return 'col s12 m10 offset-m1 l5 offset-l7';
+		}
+	};
 	/**
 	 * Port of Ghost helpers to support cross-theming
 	 * ==============================================
@@ -107,7 +107,7 @@ module.exports = function () {
 		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
 		var output = '';
 
-		function createTagList(tags) {
+		function createTagList (tags) {
 			var tagNames = _.map(tags, 'name');
 
 			if (autolink) {
@@ -214,14 +214,14 @@ module.exports = function () {
 	};
 
 	// create the category url for a blog-category page
-	_helpers.categoryUrl = function (categorySlug,options) {
+	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
 	};
 
-	//calendarUrl
+	// calendarUrl
 	_helpers.calendarUrl = function (calendarSlug, options) {
-		return ('/calendars/' + calendarSlug)
-	}
+		return ('/calendars/' + calendarSlug);
+	};
 
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
@@ -267,7 +267,7 @@ module.exports = function () {
 			// wrapup the html
 			html += '<li' + liClass + '>' + linkTemplate({
 				url: pageUrl,
-				text: pageText
+				text: pageText,
 			}) + '</li>\n';
 		});
 		return html;

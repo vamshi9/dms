@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const keystone = require('keystone');
 const handlebars = require('express-handlebars');
-const port = process.env.PORT || 7000
+const port = process.env.PORT || 7000;
 keystone.init({
 	'name': 'DMS',
 	'brand': 'DMS',
@@ -13,7 +13,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-    'mongo' : process.env.MONGO_URI,
+	'mongo': process.env.MONGO_URI,
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
@@ -32,7 +32,7 @@ keystone.init({
 
 keystone.import('models');
 
-keystone.set('admin path','admin');
+keystone.set('admin path', 'admin');
 keystone.set('locals', {
 	_: require('lodash'),
 	env: keystone.get('env'),
@@ -45,9 +45,9 @@ keystone.set('routes', require('./routes'));
 keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
 keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
-keystone.set('signin logo','../images/logo.png');
-keystone.set('signin url','/');
-keystone.set('signin redirect','/');
+keystone.set('signin logo', '../images/logo.png');
+keystone.set('signin url', '/');
+keystone.set('signin redirect', '/');
 
 
 // if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
@@ -60,5 +60,5 @@ keystone.set('signin redirect','/');
 // 	+ '\nset up your mailgun integration');
 // }
 
-keystone.set('port',port);
+keystone.set('port', port);
 keystone.start();

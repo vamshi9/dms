@@ -1,5 +1,5 @@
-var keystone = require('keystone');
-	Professors = keystone.list('professors');
+const keystone = require('keystone');
+const Professors = keystone.list('professors');
 
 exports = module.exports = function (req, res) {
 
@@ -8,16 +8,16 @@ exports = module.exports = function (req, res) {
 
 	locals.section = 'home';
 	locals.data = {
-		professorsList: []
-	}
+		professorsList: [],
+	};
 
-	//Load the Publications projects
+	// Load the Publications projects
 	view.on('init', function (next) {
 		var professors = Professors.model.find().sort('ranking');
 
 		professors.exec(function (err, results) {
 			locals.data.professorsList = results;
-			//console.log("submittted projects : " + locals.data.professorsList);
+			// console.log('submittted projects : ' + locals.data.professorsList);
 			next(err);
 		});
 

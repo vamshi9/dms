@@ -86,6 +86,9 @@ iframe {
   .page-footer div.flex-center a {
     margin: .4vw; }
 
+.home img {
+  width: 100%; }
+
 .home .secondSection {
   padding: 0vw 10vw 2vw 15vw;
   box-sizing: border-box; }

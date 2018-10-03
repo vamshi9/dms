@@ -2,35 +2,35 @@
 	<div class="slider">
 		<ul class="slides">
 			<li>
-				<img src="/images/intro.jpg" class="responsive-img">
+				<img src="/images/slider/l&t.jpg" class="responsive-img">
 				<!-- random image -->
-				<div class="caption center-align">
-					<h3>We build the World!</h3>
-					<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+				<div class="caption right-align" >
+					<h3>L&T HydMetroRail</h3>
+					<h5 class="light grey-text text-lighten-3">OCC Building, Nagole</h5>
 				</div>
 			</li>
 			<li>
-				<img src="/images/cover-min.jpg" class="responsive-img">
-				<!-- random image -->
-				<div class="caption left-align">
-					<h3>Left Aligned Caption</h3>
-					<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-				</div>
-			</li>
-			<li>
-				<img src="/images/1.jpg" class="responsive-img">
+				<img src="/images/slider/main_building.jpg" class="responsive-img">
 				<!-- random image -->
 				<div class="caption right-align">
-					<h3>Right Aligned Caption</h3>
-					<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+					<h3>Academic Block</h3>
+					<h5 class="light grey-text text-lighten-3">Civil Engineering Entrance</h5>
 				</div>
 			</li>
 			<li>
-				<img src="/images/C-Block.jpg" class="responsive-img">
+				<img src="/images/slider/intro.jpg" class="responsive-img">
+				<!-- random image -->
+				<div class="caption right-align">
+					<h3>Academic Inner Block</h3>
+					<h5 class="light grey-text text-lighten-3"></h5>
+				</div>
+			</li>
+			<li>
+				<img src="/images/slider/masterplan.jpg" class="responsive-img">
 				<!-- random image -->
 				<div class="caption center-align">
-					<h3>This is our big Tagline!</h3>
-					<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+					<h3>Master Plan</h3>
+					<h5 class="light grey-text text-lighten-3">BITS Pilani, Hyderabad Campus</h5>
 				</div>
 			</li>
 		</ul>
@@ -51,7 +51,7 @@
 	</div>
 	<div class="parallax-container">
 		<div class="parallax">
-			<img src="/images/C-Block.jpg" alt="profile background">
+			<img src="/images//slider/cover-min.jpg" alt="profile background" class="responsive-img">
 		</div>
 	</div>
 	<div class="section4 container-fluid">
@@ -75,6 +75,15 @@
 								<i class="material-icons right">close</i>
 							</h1>
 							<p>{{info}}</p>
+							<p>Current Courses:</p>
+								<ul class="collection">
+								{{#each courses}}	
+									<li class="collection-item">{{this}}</li>
+								{{/each}}
+								</ul>
+							
+
+							<a href={{profileUrl}} target="_blank" >Know more info...</a>
 						</div>
 					</div>
 
@@ -85,7 +94,7 @@
 	</div>
 	<div class="parallax-container">
 		<div class="parallax">
-			<img src="/images/C-Block.jpg" alt="profile background">
+			<img src="/images//slider/rocks.jpg" alt="profile background" class="responsive-img">
 		</div>
 	</div>
 </div>

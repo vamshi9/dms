@@ -1,8 +1,8 @@
 var keystone = require('keystone');
-	middleware = require('./middleware');
-	importRoutes = keystone.importer(__dirname);
-	User = keystone.list('User');
-	multer = require('multer');
+middleware = require('./middleware');
+importRoutes = keystone.importer(__dirname);
+User = keystone.list('User');
+multer = require('multer');
 
 
 keystone.pre('routes', middleware.initLocals);
@@ -13,19 +13,19 @@ var routes = {
 };
 
 exports = module.exports = function (app) {
-	/*Multer Pending*/
+	/* Multer Pending*/
 
-	//multer uplaoding to local destination
+	// multer uplaoding to local destination
 	// const storage = multer.diskStorage({
 	// 	destination: function (req, file, cb) {
 	// 		console.log(req);
 	// 		cb(null, './public/images')
 	// 	},
-	// 	filename: function (req, file, cb) {		
+	// 	filename: function (req, file, cb) {
 	// 	cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
 	// 	}
 	// });
-	//const upload = multer({ storage: storage }).single('profilePic');
+	// const upload = multer({ storage: storage }).single('profilePic');
 
 	// Views
 	app.get('/', middleware.requireUser, routes.views.index);
@@ -37,18 +37,18 @@ exports = module.exports = function (app) {
 	app.get('/profile', function (req, res) {
 		res.render('profile.hbs');
 	});
-	app.all('/review',routes.views.review);
+	app.all('/review', routes.views.review);
 	app.all('/teaching-initiatives', routes.views.teaching);
 	app.all('/contact', routes.views.contact);
 
-	/*Multer Pending*/
+	/* Multer Pending*/
 	// app.post('/update',(req, res) => {
 
-		
+
 	// 	var updatedFirst = req.body.first_name;
 	// 		updatedLast = req.body.last_name;
 	// 	if(updatedFirst!='' && updatedLast!=''){
-			
+
 	// 		req.user.name.first = updatedFirst;
 	// 		req.user.name.last = updatedLast;
 	// 	}
@@ -64,12 +64,12 @@ exports = module.exports = function (app) {
 	// 			res.render('profile',{
 	// 				msg : err
 	// 			});
-	// 		}else{			
+	// 		}else{
 	// 			console.log(req);
 	// 			res.redirect('/profile');
 	// 			//res.send('test');
 	// 		}
 	// 	})
-		
+
 	// });
 };

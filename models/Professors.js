@@ -13,7 +13,7 @@ Professors.add({
 	role: { type: String },
 	ranking: { type: Number },
 	info: { type: String },
-	courses: { type: Types.TextArray },
+	specialization: { type: Types.TextArray },
 	profileUrl: { type: String },
 });
 

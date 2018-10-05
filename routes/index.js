@@ -1,8 +1,8 @@
-var keystone = require('keystone');
-middleware = require('./middleware');
-importRoutes = keystone.importer(__dirname);
-User = keystone.list('User');
-multer = require('multer');
+const keystone = require('keystone');
+const middleware = require('./middleware');
+const importRoutes = keystone.importer(__dirname);
+const User = keystone.list('User');
+const multer = require('multer');
 
 
 keystone.pre('routes', middleware.initLocals);

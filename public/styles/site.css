@@ -116,6 +116,8 @@ iframe {
         width: 90px;
         height: 90px;
         margin: 67.5px 0 0 105px; }
+    .home .section4 .col.s12.m6.l4 .card .card-reveal::-webkit-scrollbar {
+      width: 1px !important; }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
   .home .section4 .col.s12.m6.l4 {

@@ -4,13 +4,13 @@
 			<li>
 				<img src="/images/slider/l&t.jpg" class="responsive-img">
 				<!-- random image -->
-				<div class="caption right-align" >
+				<div class="caption right-align">
 					<h3>L&T HydMetroRail</h3>
 					<h5 class="light grey-text text-lighten-3">OCC Building, Nagole</h5>
 				</div>
 			</li>
 			<li>
-				<img src="/images/slider/main_building.jpg" class="responsive-img">
+				<img src="/images/slider/main_building.JPG" class="responsive-img">
 				<!-- random image -->
 				<div class="caption right-align">
 					<h3>Academic Block</h3>
@@ -57,37 +57,46 @@
 	<div class="section4 container-fluid">
 		<div class="row">
 			{{#each data.professorsList}}
-				<div class="col s12 m6 l4">
-					<div class="card small z-depth-5">
-						<div class="cardBackground header">
-							<img src="{{pic.url}}" alt="Dr.Sridhar Raju" class="circle center-align">
-						</div>
-						<div class="card-content">
-							<h1 class="card-title center-align">{{name}}</h1>
-							<br>
-							<a class="btn-floating halfway-fab waves-effect waves-light red activator">
-								<i class="material-icons">add</i>
-							</a>
-							<p class="grey-text text-darken-2 center-align">{{role}}</p>
-						</div>
-						<div class="card-reveal">
-							<h1 class="card-title">{{name}}
-								<i class="material-icons right">close</i>
-							</h1>
-							<p>{{info}}</p>
-							<p>Specialization:</p>
-								<ul class="collection">
-								{{#each specialization}}	
-									<li class="collection-item">{{this}}</li>
-								{{/each}}
-								</ul>
-							
-
-							<a href={{profileUrl}} target="_blank" >Know more info...</a>
-						</div>
+			<div class="col s12 m6 l4">
+				<div class="card small z-depth-5">
+					<div class="cardBackground header">
+						<img src="{{pic.url}}" alt="Professor" class="circle center-align">
 					</div>
+					<div class="card-content">
+						<h1 class="card-title center-align">{{name}}</h1>
+						<br>
+						<a class="btn-floating halfway-fab waves-effect waves-light red activator">
+							<i class="material-icons">add</i>
+						</a>
+						<p class="grey-text text-darken-2 center-align">{{role}}</p>
+					</div>
+					<div class="card-reveal">
+						<h1 class="card-title bold">Check below
+							<i class="material-icons right">backspace</i>
+						</h1>
+						<ul class="collapsible" data-collapsible="accordion">
+							<li>
+								<div class="collapsible-header"><i class="material-icons">all_inclusive</i>Specialization</div>
+								<div class="collapsible-body">
+									{{#each specialization}}
+										<span>{{this}}</span>
+									{{/each}}
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header"><i class="material-icons">contact_mail</i>Contact</div>
+								<div class="collapsible-body">
+									<span>{{email}}</span><br><br>
+									<span>+{{phoneNumber}}</span>
+								</div>
+							</li>
+							<li><a href="{{profileUrl}}" target="_blank" class="collapsible-header">Know more info...</a></li>
+						</ul>
 
+					</div>
 				</div>
+
+			</div>
 			{{/each}}
 		</div>
 

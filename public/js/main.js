@@ -27,22 +27,6 @@ $(document).ready(function () {
 	}
 
 	$('select').material_select();
-
-
-	/* post flow text*/
-	// $('.postFlow p').addClass('flow-text');
-	/* Chatbot*/
-	$('.mychatbot').click(function () {
-		if ($(this).css('transform') == 'none') {
-			$(this).css('transform', 'rotate(225deg)');
-		} else {
-			$(this).css('transform', '');
-		}
-		$('#mychatbot').toggle();
-	});
-
-	$('#close').click(function () {
-		$('#mychatbot').hide();
-	});
+	$('.collapsible').collapsible();
 
 });

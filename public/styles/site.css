@@ -156,6 +156,8 @@ iframe {
     color: #e7ce00;
     border-top: solid #e7ce00 medium;
     border-bottom: dotted #e7ce00 thin; }
+    .teaching h1 span span {
+      color: #009688; }
   .teaching .input-field {
     margin-top: 0px; }
   .teaching div.flow-text {

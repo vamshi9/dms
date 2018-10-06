@@ -1,6 +1,7 @@
-var keystone = require('keystone');
-Teaching = keystone.list('teaching');
-User = keystone.list('User');
+const keystone = require('keystone');
+const Teaching = keystone.list('teaching');
+const User = keystone.list('User');
+
 exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 
@@ -9,24 +10,30 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		teachingData: [],
 		year: '',
-        //userName : ''
 	};
 	view.on('init', function (next) {
-		var year = req.body.year || 2018;
-		var teaching = Teaching.model.find().where('year', year).populate('author');
-		teaching.exec(function (err, results) {
-			locals.data.teachingData = results;
-			locals.data.year = year;
-            // for(var x in locals.data.teachingData){
-            //     var updatedby = locals.data.teachingData[x].updatedBy;
-            //     var userInfo = User.model.findOne(updatedby).exec(function(err,user){
-            //     locals.data.userName = user.name.first + user.name.last;
-            //     //console.log(x + " is  " + locals.data.userName);
-            //    });
-            // }
-           // console.log(locals.data.userName)
-			next(err);
-		});
+		const semester = req.body.semester || '2018 sem I';
+		// console.log(semester);
+		Teaching.model.find({ sem: semester }).populate('author')
+			.exec()
+			.then(results => {
+				locals.data.teachingData = results;
+				locals.data.year = semester;
+				for (const obj of locals.data.teachingData) {
+					User.model.findById(obj.updatedBy)
+						.exec()
+						.then(user => {
+							obj.username = user.name.first + user.name.last;
+							console.log(obj);
+						});
+				}
+				next();
+			})
+			.catch(err => {
+				console.log(err);
+			});
+			// console.log(locals.data.teachingData[0]);
+			// console.log(locals.data.teachingData);
 	});
 	view.render('teaching');
 };

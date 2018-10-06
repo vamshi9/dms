@@ -1,13 +1,13 @@
-var moment = require('moment');
-var _ = require('lodash');
-var hbs = require('handlebars');
-var keystone = require('keystone');
-var cloudinary = require('cloudinary');
+const moment = require('moment');
+const _ = require('lodash');
+const hbs = require('handlebars');
+const keystone = require('keystone');
+const cloudinary = require('cloudinary');
 
 // Collection of templates to interpolate
-var linkTemplate = _.template('<a href="<%= url %>"><%= text %></a>');
-var scriptTemplate = _.template('<script src="<%= src %>"></script>');
-var cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
+const linkTemplate = _.template('<a href="<%= url %>"><%= text %></a>');
+const scriptTemplate = _.template('<script src="<%= src %>"></script>');
+const cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
 
 module.exports = function () {
 
@@ -34,7 +34,7 @@ module.exports = function () {
 
 
 	_helpers.ifEven = function (val) {
-		if (val % 2 == 0) {
+		if (val % 2 === 0) {
 			return 'col s12 m10 offset-m1 l5';
 		} else {
 			return 'col s12 m10 offset-m1 l5 offset-l7';

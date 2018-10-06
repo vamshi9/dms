@@ -4,15 +4,15 @@
             <h1 class="center-align">
                 <i class="material-icons">arrow_forward</i>
                 Student Learning Outcome (SLO) :- 
-                <span>{{data.teachingData.length}} courses were taken up during {{data.year}} </span>
+                <span>{{data.teachingData.length}} courses were taken up during <span>{{data.year}}</span></span>
             </h1>
         </div>
         <div class="offset-s4 col s4">
             <form action="/teaching-initiatives" method="post">
                 <div class="input-field col s4">
-                    <select id="yearPicker" name="year"></select>
+                    <select id="semesterPicker" name="semester"></select>
                 </div>
-                <button type="submit" value="go" class="btn waves-effect waves-light">go</button>
+                <button type="submit" value="go" class="btn waves-effect waves-light" id="semSelect">go</button>
             </form>
         </div>
     </div>
@@ -40,16 +40,3 @@
         {{/each}}
     </div>
 </div>
-
-<script>
-    var max = new Date().getFullYear();
-    min = max - 36;
-    select = document.getElementById('yearPicker');
-    for (let i = max; i >= min; i--) {
-        var opt = document.createElement("option");
-        opt.value = i;
-        opt.name = "year";
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-</script>

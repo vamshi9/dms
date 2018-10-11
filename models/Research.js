@@ -1,5 +1,5 @@
-var keystone = require('keystone');
-Types = keystone.Field.Types;
+const keystone = require('keystone');
+const Types = keystone.Field.Types;
 
 var Research = new keystone.List('research', {
 	autokey: { path: 'slug', from: 'title', unique: 'true' },
@@ -15,23 +15,16 @@ Research.add({
 	coInvestigator: { type: String },
 	fundingAgency: { type: String },
 	sanctionedAmount: { type: Number, note: 'lakhs' },
-	from: { type: Types.Date },
-	to: { type: Types.Date, hidden: false },
-});
-
-// accessing state of research
-
-
-Research.schema.pre('save', function (next) {
-	if (this.state == 'Submitted') {
-		console.log(this.from);
-        // this.from.label = 'on';
-        // this.to.hidden = 'true';
-	}
-	next();
+	On: { type: Types.Date, dependsOn: { state: 'Submitted' } },
+	from: { type: Types.Date, dependsOn: { state: ['Ongoing', 'Completed'] } },
+	to: { type: Types.Date, dependsOn: { state: ['Ongoing', 'Completed'] } },
 });
 
 /** Can we call it with one function?**/
+Research.schema.virtual('onDate').get(function () {
+	return this._.On.format('D MMMM YYYY');
+});
+
 Research.schema.virtual('fromDate').get(function () {
 	return this._.from.format('D MMMM YYYY');
 });

@@ -2,7 +2,7 @@ const keystone = require('keystone');
 const Teaching = keystone.list('teaching');
 const User = keystone.list('User');
 
-exports = module.exports = function (req, res) {
+exports = module.exports = (req, res) => {
 	var view = new keystone.View(req, res);
 
 	var locals = res.locals;
@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
 		teachingData: [],
 		year: '',
 	};
-	view.on('init', function (next) {
+	view.on('init', (next) => {
 		const semester = req.body.semester || '2018 sem I';
 		// console.log(semester);
 		Teaching.model.find({ sem: semester }).populate('author')

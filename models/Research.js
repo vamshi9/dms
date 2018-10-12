@@ -5,6 +5,7 @@ var Research = new keystone.List('research', {
 	autokey: { path: 'slug', from: 'title', unique: 'true' },
 	map: { name: 'title' },
 	defaultSort: '-createdAt',
+	track: 'true',
 });
 
 

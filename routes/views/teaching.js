@@ -20,13 +20,18 @@ exports = module.exports = (req, res) => {
 			.then(async results => {
 				locals.data.teachingData = results;
 				locals.data.year = semester;
-				// todo : Use parallel loading --> Promise.all() || async.each()
-				// for (const obj of locals.data.teachingData) {
-				// 	const userModel = await User.model.findById(obj.updatedBy);
-				// 	// console.log(userModel);
-				// 	obj.username = userModel.name.first + ' ' + userModel.name.last;
-				// 	// console.log(obj);
-				// };
+
+				/**
+				* * Synchronous loading
+				* for (const obj of locals.data.teachingData) {
+				*	const userModel = await User.model.findById(obj.updatedBy);
+				* 	console.log(userModel);
+				* 	obj.username = userModel.name.first + ' ' + userModel.name.last;
+				* 	console.log(obj);
+				* };
+				*
+				* * Parallel loading
+				*/
 				async function getUser (obj) {
 					const userModel = await User.model.findById(obj.updatedBy);
 					obj.username = userModel.name.first + ' ' + userModel.name.last;

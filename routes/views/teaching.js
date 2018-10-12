@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Teaching = keystone.list('teaching');
 const User = keystone.list('User');
+const async = require('async');
 
 exports = module.exports = (req, res) => {
 	var view = new keystone.View(req, res);
@@ -20,12 +21,19 @@ exports = module.exports = (req, res) => {
 				locals.data.teachingData = results;
 				locals.data.year = semester;
 				// todo : Use parallel loading --> Promise.all() || async.each()
-				for (const obj of locals.data.teachingData) {
+				// for (const obj of locals.data.teachingData) {
+				// 	const userModel = await User.model.findById(obj.updatedBy);
+				// 	// console.log(userModel);
+				// 	obj.username = userModel.name.first + ' ' + userModel.name.last;
+				// 	// console.log(obj);
+				// };
+				async function getUser (obj) {
 					const userModel = await User.model.findById(obj.updatedBy);
-					// console.log(userModel);
 					obj.username = userModel.name.first + ' ' + userModel.name.last;
-					// console.log(obj);
 				};
+				const promises = locals.data.teachingData.map(getUser);
+				await Promise.all(promises);
+
 				// console.log('Done');
 				next();
 			})

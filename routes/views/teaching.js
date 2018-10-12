@@ -19,17 +19,19 @@ exports = module.exports = (req, res) => {
 			.then(async results => {
 				locals.data.teachingData = results;
 				locals.data.year = semester;
+				// todo : Use parallel loading --> Promise.all() || async.each()
 				for (const obj of locals.data.teachingData) {
 					const userModel = await User.model.findById(obj.updatedBy);
 					// console.log(userModel);
 					obj.username = userModel.name.first + ' ' + userModel.name.last;
-					console.log(obj);
+					// console.log(obj);
 				};
-				console.log('Done');
+				// console.log('Done');
 				next();
 			})
 			.catch(err => {
-				console.log(err);
+				// console.log(err);
+				next(err);
 			});
 	});
 	view.render('teaching');

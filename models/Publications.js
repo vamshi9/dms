@@ -1,10 +1,12 @@
-var keystone = require('keystone');
-Types = keystone.Field.Types;
+const keystone = require('keystone');
+const Types = keystone.Field.Types;
 
 var Publications = new keystone.List('Publications', {
 	autokey: { path: 'slug', from: 'title', unique: 'true' },
 	map: { name: 'title' },
 	defaultSort: '-createdAt',
+	perPage: 10,
+	track: true,
 });
 
 Publications.add({

@@ -1,5 +1,5 @@
-var keystone = require('keystone');
-Publications = keystone.list('publications');
+const keystone = require('keystone');
+const Publications = keystone.list('publications');
 exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;

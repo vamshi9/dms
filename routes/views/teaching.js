@@ -16,24 +16,21 @@ exports = module.exports = (req, res) => {
 		// console.log(semester);
 		Teaching.model.find({ sem: semester }).populate('author')
 			.exec()
-			.then(results => {
+			.then(async results => {
 				locals.data.teachingData = results;
 				locals.data.year = semester;
 				for (const obj of locals.data.teachingData) {
-					User.model.findById(obj.updatedBy)
-						.exec()
-						.then(user => {
-							obj.username = user.name.first + user.name.last;
-							console.log(obj);
-						});
-				}
+					const userModel = await User.model.findById(obj.updatedBy);
+					// console.log(userModel);
+					obj.username = userModel.name.first + ' ' + userModel.name.last;
+					console.log(obj);
+				};
+				console.log('Done');
 				next();
 			})
 			.catch(err => {
 				console.log(err);
 			});
-			// console.log(locals.data.teachingData[0]);
-			// console.log(locals.data.teachingData);
 	});
 	view.render('teaching');
 };

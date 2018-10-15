@@ -1,10 +1,10 @@
-var keystone = require('keystone');
-var async = require('async');
-User = keystone.list('User');
+const keystone = require('keystone');
+const async = require('async');
+// const User = keystone.list('User');
 
 exports = module.exports = function (req, res) {
 
-	var view = new keystone.View(req, res);
+	const view = new keystone.View(req, res);
 	let locals = res.locals;
 
 	locals.section = 'blog';
@@ -54,11 +54,11 @@ exports = module.exports = function (req, res) {
 		}
 	});
 
-	view.on('init', function (next) {
+	view.on('init', (next) => {
 
-		var q = keystone.list('Post').paginate({
+		const q = keystone.list('Post').paginate({
 			page: req.query.page || 1,
-			perPage: 5,
+			// perPage: 5,
 			//maxPages: 10,
 			// filters: {
 			// 	state: 'published',
@@ -71,18 +71,9 @@ exports = module.exports = function (req, res) {
 			q.where('categories').in([locals.data.category]);
 		}
 
-		q.exec(function (err, results) {
+		// todo: get username
+		q.exec((err, results) => {
 			locals.data.posts = results;
-			// locals.data.posts.results.forEach(function(element,index){
-			// 	let updatedBy = locals.data.posts.results.updatedBy;
-			// 	User.model.findById(updatedBy).exec(function(error,user){
-			// 		element.userDetails = user.name.first + user.name.last;
-
-			// 		next(error);
-			// 	});
-
-
-			// });
 			next(err);
 		});
 	});

@@ -11,7 +11,7 @@ var Post = new keystone.List('Post', {
 
 Post.add({
 	title: { type: String, required: true },
-	author: { type: Types.Relationship, ref: 'User', hidden: true },
+	// author: { type: Types.Relationship, ref: 'User', hidden: true },
 	image: { type: Types.CloudinaryImage },
 	content: {
 		brief: { type: Types.Textarea, wysiwyg: true, height: 75 },

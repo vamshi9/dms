@@ -3,8 +3,8 @@ const Professors = keystone.list('professors');
 
 exports = module.exports = function (req, res) {
 
-	var view = new keystone.View(req, res);
-	var locals = res.locals;
+	const view = new keystone.View(req, res);
+	const locals = res.locals;
 
 	locals.section = 'home';
 	locals.data = {
@@ -13,7 +13,7 @@ exports = module.exports = function (req, res) {
 
 	// Load the Publications projects
 	view.on('init', function (next) {
-		var professors = Professors.model.find().sort('ranking');
+		const professors = Professors.model.find().sort('ranking');
 
 		professors.exec(function (err, results) {
 			locals.data.professorsList = results;
@@ -22,5 +22,10 @@ exports = module.exports = function (req, res) {
 		});
 
 	});
+
+	/**
+	// todo: user tour through website
+	*/
+
 	view.render('index');
 };

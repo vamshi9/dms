@@ -41,7 +41,7 @@ exports.initLocals = function (req, res, next) {
 
 	if (typeof userInfo === 'undefined') {
 		res.redirect('/admin/signin');
-	} else if (userInfo.name.first != 'HOD') {
+	} else if (userInfo.name.first !== 'HOD') {
 		keystone.set('nav', {
 			posts: ['posts', 'post-categories'],
 			galleries: 'galleries',

@@ -1,7 +1,7 @@
-var keystone = require('keystone');
-Types = keystone.Field.Types;
+const keystone = require('keystone');
+const Types = keystone.Field.Types;
 
-var Contribution = new keystone.List('contribution', {
+const Contribution = new keystone.List('contribution', {
 	autokey: { path: 'slug', from: 'consultancyProject', unique: true },
 	map: { name: 'consultancyProject' },
 	defaultSort: '-createdAt',

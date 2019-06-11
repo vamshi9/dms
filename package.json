@@ -8,7 +8,7 @@
     "dotenv": "4.0.0",
     "express-fileupload": "^0.4.0",
     "express-handlebars": "3.0.0",
-    "handlebars": "4.0.6",
+    "handlebars": "4.0.14",
     "keystone": "4.0.0-beta.5",
     "keystone-email": "1.0.5",
     "lodash": "^4.13.1",
